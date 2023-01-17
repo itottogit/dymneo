@@ -3,7 +3,7 @@
  * Write a description of class starter here.
  * 
  * @author KKG-Profil 
- * @version January 2023
+ * @version 01/2023
  */
 public class starter
 {
