@@ -2,8 +2,8 @@
 /**
  * Write a description of class starter here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author KKG-Profil 
+ * @version 01/22
  */
 public class starter
 {
