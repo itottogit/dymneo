@@ -97,6 +97,14 @@
       verschiebeUnten.addActionListener(controller);
       getContentPane().add(verschiebeUnten);
       
+      //Button zum anzeigen der details
+     
+     JButton details = new JButton("Details");
+     details.setHorizontalAlignment(SwingConstants.CENTER);
+      details.setBounds(280, 200, 80, 30);
+      details.addActionListener(controller);
+      getContentPane().add(details);
+     
       // Hier wird der Knopf f�r das Linksverschieben eines markierten M�belst�cks
       // erstellt. 
 

@@ -4,6 +4,7 @@ import java.io.*;
 import java.awt.*;
 import java.lang.StringBuffer;
 import java.lang.String;
+import java.util.Arrays;
 
 
 public class Elementverwaltung
@@ -11,6 +12,8 @@ public class Elementverwaltung
     private Controller controller;
     private ArrayList  verwaltungsListeElemente;
     public  FileWriter fw;
+    private Arrays details;
+    private File txt;
 
     
     public Elementverwaltung(Controller controller) 
@@ -19,6 +22,39 @@ public class Elementverwaltung
         this.controller = controller;
     }
     
+    public static String detailsLesen() {
+    StringBuilder sb = new StringBuilder();
+    try {
+        
+      DetailFenster fenster = new DetailFenster();
+      
+      // Öffne die Datei zum Lesen
+      BufferedReader reader = new BufferedReader(new FileReader("kraftwerkDetails.txt"));
+
+      // Lese die erste Zeile
+      String line = reader.readLine();
+
+      // Solange es noch weitere Zeilen gibt, lies sie
+      while (line != null) {
+        // Verarbeite die aktuelle Zeile (z.B. füge sie dem StringBuilder hinzu)
+        sb.append(line).append("\n");
+        
+        fenster.detailHinzufügen(line);
+
+        // Lese die nächste Zeile
+        line = reader.readLine();
+      }
+
+      // Schließe den Reader
+      reader.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    // Gib den gelesenen Text zurück
+    return sb.toString();
+  }
+  
     public void neuesElement(String typ)
     {
         System.out.println("Neues Element ("+typ+") wird erstellt.");
