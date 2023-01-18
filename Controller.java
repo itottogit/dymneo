@@ -53,6 +53,20 @@
           System.out.println("Action Test");
       } 
      
+     
+      
+    
+    
+    if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Details")))
+      {
+        //Der Button zum anzeigen der Details wurde gedrueckt
+         
+        ev.detailsLesen();
+        
+         
+        }
+
   
     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("rechts")))
