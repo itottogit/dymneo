@@ -22,10 +22,11 @@ public class BMitte extends Element
         yPosition = 80;
         farbe = Color.blue;
         orientierung = 0;
-        istSichtbar = true;
+        istSichtbar  = true;
         breite = 40;
         hoehe  = 40;
-        
+        faktorHoehe  = 1;
+        faktorBreite = 1;
         figur = gibAktuelleFigur();
     }
     
@@ -525,11 +526,13 @@ public class BMitte extends Element
         ((GeneralPath) shape).closePath();
         
         // transformieren:
-        AffineTransform t = new AffineTransform();
-        t.translate(xPosition, yPosition);
-        Rectangle2D umriss = shape.getBounds2D();
-        t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
-        return  t.createTransformedShape(shape);
+        // AffineTransform t = new AffineTransform();
+        // t.translate(xPosition, yPosition);
+        // Rectangle2D umriss = shape.getBounds2D();
+        // t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
+        // Shape newShape = t.createTransformedShape(shape); 
+        Shape newShape = transformiere(shape);
+        return  newShape;
     }
-
+ 
 }

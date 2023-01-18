@@ -9,7 +9,7 @@ import java.lang.String;
 public class Elementverwaltung
 {
     private Controller controller;
-    private ArrayList  verwaltungsListeElemente;
+    private ArrayList<Element> verwaltungsListeElemente;
     public  FileWriter fw;
 
     
@@ -46,16 +46,6 @@ public class Elementverwaltung
         controller.updateView();
     }
 
-    public void zeichnen()
-    {   
-//     for (Iterator i = figuren.iterator(); i.hasNext();)
-    {
-        //if(figurZuShape.get(i.next()) != null)
-       // {
-//         ((ShapeMitFarbe) figurZuShape.get(i.next())).draw(graphic);
-       // }
-    }   
-    }    
     
     public void verwaltungsListeElementeEintragen(Element element)
     {
@@ -69,10 +59,28 @@ public class Elementverwaltung
         System.out.println("Man müsste mal was programmieren, damit man seine Einrichtungen auch speichern kann...");
     } 
 
-   
-
-
-
+    /**
+     * Diese Methode wird vom Testbutton ausgeführt.
+     * 
+     * @param  
+     * @return      
+     */   
+    
+    public void testMethode()
+    {
+        System.out.println("Testmethode aufgerufen");
+        
+        for (Element aktuelles : verwaltungsListeElemente)
+        {
+            //if (aktuelles instanceof BMitte)
+            {
+                //aktuelles.drehe(90);
+                //aktuelles.verschiebeElement(4,20);
+                aktuelles.skaliere(1.5f,1.5f);
+                aktuelles.figur = aktuelles.gibAktuelleFigur();
+            }
+        }
+    }
 
     
     /**

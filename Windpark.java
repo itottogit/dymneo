@@ -31,8 +31,8 @@ public class Windpark extends Wind
         anlage2 = new Wind();
         anlage3 = new Wind();
         
-        anlage2.hoeheBreite(24,24);
-        anlage3.hoeheBreite(24,24);
+        anlage2.skaliere(0.5f,0.5f);
+        anlage3.skaliere(0.5f,0.5f);
         
         anlage2.verschiebeElement(1,(int)(breite/2));
         anlage2.verschiebeElement(3,(int)(tiefe/2));

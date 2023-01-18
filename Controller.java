@@ -22,7 +22,7 @@
         
         canvasFrame  = new CanvasFrame("Energiekarte",800,600,Color.white,this);
        
-        soundOutput = new SoundOutput();
+        //soundOutput = new SoundOutput();
         
         ev = new Elementverwaltung(this); 
         Hamburg hh = new Hamburg(ev); canvasFrame.updateList(ev.getElementList());
@@ -44,54 +44,15 @@
       }
       
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-           (((JButton) eventQuelle).getText().equals("Objekt hinzufügen")))
-        {
-          // Der Knopf "Objekt hinzufügen" wurde gedrückt. Es wird ein neues Möbel
-          // im Modell erstellt.
-          // System.out.println("Neues Kraftwerk ("+auswahl+") wird erstellt.");
-          // if (auswahl == "Bett"){
-              // Bett bett = new Bett();
-              // ev.verwaltungsListeKraftwerkeEintragen(bett);
-              // canvasFrame.neuesElement(bett);
-              // System.out.println("Bett erstellt");
-          // }  
+           (((JButton) eventQuelle).getText().equals("Testknopf")))
+      {
+          // Der Testknopf wurde gedrückt. 
           
-        
-        
-          // if (auswahl == "Wind"){
-              // Wind wind = new Wind();
-              // ev.verwaltungsListeKraftwerkeEintragen(wind);
-              // canvasFrame.neuesElement(wind);
-              // System.out.println("Wind erstellt");
-          // }  
-          
-         // if (auswahl == "Solar"){
-              // Solar solar= new Solar();
-              // ev.verwaltungsListeKraftwerkeEintragen(solar);
-              // canvasFrame.neuesElement(solar);
-              // System.out.println("Solar erstellt");
-          // }  
-          
-          
-            // if (auswahl == "Windpark"){
-              // Windpark windpark= new Windpark();
-              // ev.verwaltungsListeKraftwerkeEintragen(windpark);
-              // canvasFrame.neuesElement(windpark);
-              // System.out.println("Windpark erstellt");
-          // }  
-          
-           // if (auswahl == "Wasser"){
-              // Wasser wasser= new Wasser();
-              // ev.verwaltungsListeKraftwerkeEintragen(wasser);
-              // canvasFrame.neuesElement(wasser);
-              // System.out.println("Wasser erstellt");
-          // }  
-          
-          
-          
-           
-      
-    }
+          ev.testMethode();
+          canvasFrame.updateList(ev.getElementList());
+          System.out.println("Action Test");
+      } 
+     
   
     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("rechts")))

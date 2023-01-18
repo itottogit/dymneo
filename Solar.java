@@ -26,14 +26,15 @@ public class Solar extends Kraftwerk implements Serializable{
         orientierung = 0;
         hoehe = 50;
         breite = 75;
-        
+        faktorHoehe  = 1;
+        faktorBreite = 1;
         markiert = true;
         
         figur = gibAktuelleFigur();
     }
     
    
-   
+    
     
     
     
@@ -51,11 +52,8 @@ public class Solar extends Kraftwerk implements Serializable{
         path.moveTo(0 , (breite/10+1));
         path.lineTo(breite, (breite/10+1));    
         // transformieren:
-        AffineTransform t = new AffineTransform();
-        t.translate(xPosition, yPosition);
-        Rectangle2D umriss = path.getBounds2D();
-        t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
-        return  t.createTransformedShape(path);
+        Shape newShape = transformiere(path);
+        return  newShape;
         
         
         

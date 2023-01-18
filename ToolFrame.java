@@ -56,7 +56,17 @@
     extra.add(ueber);
     menueLeiste.add(extra);
     setMenuBar(menueLeiste);
-        
+
+      // Hier wird der Knopf f�r die Erstellung eines neuen Elements
+      // erstellt. 
+      JButton testKnopf = new JButton("Testknopf");
+      testKnopf.setHorizontalAlignment(SwingConstants.CENTER);
+      testKnopf.setBounds(0, 145, 90, 160);
+      testKnopf.addActionListener(controller);
+      getContentPane().add(testKnopf);
+    
+    
+    
       // Hier wird der Knopf f�r die Erstellung eines neuen Elements
       // erstellt. 
       JButton neuesElementKnopf = new JButton("Objekt hinzufügen");

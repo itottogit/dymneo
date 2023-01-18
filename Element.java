@@ -18,9 +18,12 @@ public abstract class Element implements Serializable{
     protected int yPosition;
     protected int orientierung;
     protected Color farbe;
+    protected Color standardFarbe;
     protected boolean istSichtbar;
     protected int breite;
     protected int hoehe;
+    protected float faktorHoehe;
+    protected float faktorBreite;
     protected boolean markiert;
     protected Shape figur;
     
@@ -49,7 +52,11 @@ public abstract class Element implements Serializable{
         t.translate(xPosition, yPosition);
         Rectangle2D randung = shape.getBounds2D();
         t.rotate(Math.toRadians(orientierung),randung.getX()+randung.getWidth()/2,randung.getY()+randung.getHeight()/2);
-        return  t.createTransformedShape(shape);
+        t.scale(faktorHoehe, faktorBreite);
+        Shape shapeNeu = t.createTransformedShape(shape);
+        //Shape shapeNeu = AffineTransform.getScaleInstance(faktorHoehe, faktorBreite).createTransformedShape(t.createTransformedShape(shape));
+        return shapeNeu;
+        
     }
     
     /**
@@ -59,39 +66,11 @@ public abstract class Element implements Serializable{
      */
     
     public void drehe(int neugrad) {
-        
         orientierung = neugrad;
         hoehe= Math.round(hoehe*1.05f);
-        zeichneElement();
     }
     
-    /**
-     * Funktion, die die Hoehe und Breite eines Objekts aendert
-     * und es dann neu zeichnet
-     * @param neueHoehe     Gewuenschte Hoehe
-     * @param neueBreite    Gewuenschte Breite
-     */
-    public void hoeheBreite(int neueHoehe, int neueBreite)
-    {
-        hoehe = neueHoehe;
-        breite = neueBreite;
-        zeichneElement();
-    }
-    
-    /**
-     * Eigentliche Zeichenfunktion, die das Moebelstueck erstellt.
-     * Sie dient dem Nutzer zum Ausfuehren und greift natuerlich auf die zeigende
-     * Leinwand zu.
-     * Eine Figur vom Typ Shape wird erstellt und erhalteNeueFigur wird aufgerufen.
-     * Anschliessend wird diese neue Figur gezeichnet.
-     */
-    
-    public void zeichneElement()
-    {
-        //   
-    }
-    
-    
+
     /**
      * Funktion, die unsere Moebel bewegt.
      * Zur Uebersichtlichkeit werden hier Scanner benutzt, damit der Nutzer die Funktionen besser versteht.
@@ -112,25 +91,22 @@ public abstract class Element implements Serializable{
         nutzer.nextLine();
         verschiebeElement(userRichtung, userWeite);
     }
-    
-    /**
-     * Ruft eine Leinwandfunktion auf, die die Moebel loeoescht
-     */
-    
-public void entferneElement()
-    {
-//         Leinwand leinwand=Leinwand.gibLeinwand();
-//         leinwand.entferne(this);
-    }
-    
 
-    
     /**
-     * Erhaelt die Eingaben von verschiebe_moebel
+     * Erhaelt die Eingaben
      * und aendert entsprechend die x- und y-Position.
-     * Anschließend werden die Moebel neu gezeichnet.
-     * 
-     * 
+     * Anschließend müssen die Elemente neu gezeichnet werden.
+     */
+public void skaliere(float hoehenfaktor, float breitenfaktor)
+    {    
+        faktorHoehe = faktorHoehe*hoehenfaktor;
+        faktorBreite = faktorBreite*breitenfaktor;
+    }
+
+    /**
+     * Erhaelt die Eingaben
+     * und aendert entsprechend die x- und y-Position.
+     * Anschließend müssen die Elemente neu gezeichnet werden.
      */
 public void verschiebeElement(int richtung, int weite)
     {
@@ -155,7 +131,6 @@ public void verschiebeElement(int richtung, int weite)
             System.err.print("Fehlerhafte Eingabe des Nutzers\n)" );
         }
         
-        zeichneElement();
     }//funktion verschiebe
     
                
@@ -174,9 +149,6 @@ public void verschiebeElement(int richtung, int weite)
     {
         return this.breite;
     }
-    
-    
-
     
     /**
      * Die Methode gibt die X-Position des Elements aus.
@@ -203,7 +175,7 @@ public void verschiebeElement(int richtung, int weite)
     }
     
     /**
-     * Die Methode gibt den orientierung des Elements aus
+     * Die Methode gibt die orientierung des Elements aus
      */    
         public int getorientierung()
     {
