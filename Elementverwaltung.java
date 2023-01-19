@@ -5,6 +5,7 @@ import java.awt.*;
 import java.lang.StringBuffer;
 import java.lang.String;
 import java.util.Arrays;
+import java.awt.geom.Point2D; 
 
 
 public class Elementverwaltung
@@ -54,6 +55,7 @@ public class Elementverwaltung
     // Gib den gelesenen Text zurück
     return sb.toString();
   }
+  
   
     public void neuesElement(String typ)
     {
@@ -138,16 +140,33 @@ public class Elementverwaltung
        
      }//laden
 
-    
+
     
     
   
     public boolean markiereElemente(Point p)
     {
-     //nur wie?
-     return(true);
-     
-    } 
+     for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+     { 
+         Element element = (Element) i.next();
+         Shape aktuelleFigur = element.gibAktuelleFigur();
+        if(aktuelleFigur.contains(p))
+      {
+         element.markiert = true; 
+         element.farbe = Color.red ;
+         System.out.println("true"); 
+      }
+      else 
+      {
+         element.markiert = false; 
+         element.farbe = Color.black;
+         System.out.println("false"); 
+      }     
+        
+     }
+     return(true); 
+    }
+    
 
     
     public void verschiebeMarkierteElementeNachRechts()
@@ -210,7 +229,7 @@ public class Elementverwaltung
      }
     } 
 
-    
+
     
     
     

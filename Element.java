@@ -181,6 +181,15 @@ public void verschiebeElement(int richtung, int weite)
     {
         return this.orientierung;
     }
+    
+    public void markiertFarbe(String farbe){
+        if(markiert=true){
+            farbe  = "rot"; 
+        }
+        else{
+            farbe = "schwarz"; 
+        }
+    }
 }//class
     
     

@@ -2,6 +2,8 @@
   import java.awt.event.*;
   import javax.swing.*;
   import javax.swing.event.*;
+  import java.awt.geom.Point2D; 
+  import java.awt.Point; 
   
   public class Controller extends MouseInputAdapter implements ActionListener, ListSelectionListener
   {

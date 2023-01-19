@@ -32,4 +32,13 @@ public abstract class Kraftwerk extends Element
     {
         status = neuerStatus;
     }
+    
+    public void markiertFarbe(String farbe){
+        if(markiert=true){
+            farbe  = "rot"; 
+        }
+        else{
+            farbe = "schwarz"; 
+        }
+    }
 }
