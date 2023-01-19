@@ -20,7 +20,7 @@ public class BMitte extends Element
     public BMitte() {
         xPosition = 160;
         yPosition = 80;
-        farbe = Color.blue;
+        farbe = Color.black;
         orientierung = 0;
         istSichtbar  = true;
         breite = 40;

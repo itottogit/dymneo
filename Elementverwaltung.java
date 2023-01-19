@@ -144,22 +144,24 @@ public class Elementverwaltung
     
     
   
-    public boolean markiereElemente(Point p)
+    public boolean markiereElemente(Point2D p)
     {
+        
+        System.out.println("da!"); 
      for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
      { 
          Element element = (Element) i.next();
          Shape aktuelleFigur = element.gibAktuelleFigur();
-        if(aktuelleFigur.contains(p))
+      if(aktuelleFigur.contains(p))
       {
-         element.markiert = true; 
          element.farbe = Color.red ;
+         element.markiert = true; 
          System.out.println("true"); 
       }
       else 
       {
-         element.markiert = false; 
          element.farbe = Color.black;
+         element.markiert = false; 
          System.out.println("false"); 
       }     
         

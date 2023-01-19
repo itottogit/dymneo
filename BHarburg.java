@@ -20,7 +20,7 @@ public class BHarburg extends Element
     public BHarburg() {
         xPosition = 160;
         yPosition = 80;
-        farbe = Color.blue;
+        farbe = Color.black;
         orientierung = 0;
         istSichtbar = true;
         breite = 40;

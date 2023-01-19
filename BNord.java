@@ -20,7 +20,7 @@ public class BNord extends Element
     public BNord() {
         xPosition = 160;
         yPosition = 80;
-        farbe = Color.blue;
+        farbe = Color.black;
         orientierung = 0;
         istSichtbar = true;
         breite = 40;

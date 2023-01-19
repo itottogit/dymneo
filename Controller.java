@@ -154,21 +154,21 @@
     {
       int knopf = evt.getButton();  
       Point p = new Point(evt.getX(), evt.getY());
-      
-      switch (knopf) {
-       case 1:  if (ev.markiereElemente(p))
-                     {soundOutput.sonar();}
-                     else 
-                     {soundOutput.teeswing();};
-                     System.out.println("Maustaste  " + knopf);
-                     break;
+      ev.markiereElemente(p); 
+      // switch (knopf) {
+       // case 1:  if (ev.markiereElemente(p))
+                     // {soundOutput.sonar();}
+                     // else 
+                     // {soundOutput.teeswing();};
+                     // System.out.println("Maustaste  " + knopf);
+                     // break;
                      
-       case 2:   System.out.println("Maustaste  " + knopf);  
-                 break;
+       // case 2:   System.out.println("Maustaste  " + knopf);  
+                 // break;
       
-       case 3:   System.out.println("Maustaste  " + knopf);  
-                 break;
-      }
+       // case 3:   System.out.println("Maustaste  " + knopf);  
+                 // break;
+      // }
       
        canvasFrame.neuZeichnen();
        System.out.println("Maus geklickt bei Stelle: " + p.toString());
