@@ -1,0 +1,9 @@
+Name: Kernkraftwerk Krümmel
+
+Adresse: Elbuferstraße 82, 21502 Geesthacht
+
+Firma: Vattenfall
+
+Art: Atomkraftwerk
+
+Leistung: 0 (inaktiv)

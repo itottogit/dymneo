@@ -1,0 +1,11 @@
+Name: Heizkraftwerk Tiefstack
+
+Adresse:22113 Hamburg
+
+Firma: Hamburger Energiewerke GmbH
+
+Art: Heizkraftwerk
+
+Fernwärmeleistung: 300 Megawatt
+
+Elektrische Leistung: 190 Megawatt

@@ -1,3 +1,4 @@
+import java.io.File;
 
 /**
  * Write a description of class Kraftwerk here.
@@ -12,11 +13,12 @@ public abstract class Kraftwerk extends Element
     private int maximaleLeistung;
     private boolean status;
     public int tiefe; 
+    private File details;
 
     /**
      * Constructor for objects of class Kraftwerk
      */
-    public Kraftwerk()
+    public Kraftwerk(/**String filePath*/)
     {
         // initialise instance variables
         status = true;
