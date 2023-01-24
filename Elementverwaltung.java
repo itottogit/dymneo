@@ -21,6 +21,7 @@ public class Elementverwaltung
         verwaltungsListeElemente = new ArrayList<Element>();
         this.controller = controller;
     }
+   
 
     public String detailsLesen() {
     StringBuilder sb = new StringBuilder();
