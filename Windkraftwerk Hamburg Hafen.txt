@@ -1,4 +1,9 @@
 Name: Windpark Hamburg Hafen
+
 Adresse: In der Nähe von Altenwerder Kirchweg, 21129 Hamburg
+
 Firma: Hamburg Energie
+
+Art: Windkraftwerk
+
 Leistung: 29 Millionen Kilowattstunden pro Jahr

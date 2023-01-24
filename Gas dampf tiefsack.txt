@@ -1,0 +1,9 @@
+Name: Gas- und Dampfkraftwerk Tiefsack
+
+Adresse: Heizkraftwerk Tiefsack
+
+Firma: Wärme Hamburg
+
+Art: Gaskraftwerk
+
+Leistung: 400 Megawatt

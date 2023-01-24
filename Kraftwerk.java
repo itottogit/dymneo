@@ -14,14 +14,16 @@ public abstract class Kraftwerk extends Element
     private boolean status;
     public int tiefe; 
     private File details;
+    private String filePath;
 
     /**
      * Constructor for objects of class Kraftwerk
      */
-    public Kraftwerk(/**String filePath*/)
+    public Kraftwerk(String filePath)
     {
         // initialise instance variables
         status = true;
+        this.filePath = filePath;
     }
 
     /**
@@ -33,6 +35,10 @@ public abstract class Kraftwerk extends Element
     public void setzeStatus(boolean neuerStatus)
     {
         status = neuerStatus;
+    }
+    
+    public String getStringPath(){
+        return filePath;
     }
     
     public void markiertFarbe(String farbe){

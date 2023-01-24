@@ -15,6 +15,7 @@ public class Elementverwaltung
     public  FileWriter fw;
     private Arrays details;
     private File txt;
+    private Kraftwerk kw;
 
     
     public Elementverwaltung(Controller controller) 
@@ -23,14 +24,14 @@ public class Elementverwaltung
         this.controller = controller;
     }
     
-    public static String detailsLesen() {
+    public String detailsLesen() {
     StringBuilder sb = new StringBuilder();
     try {
         
       DetailFenster fenster = new DetailFenster();
       
       // Öffne die Datei zum Lesen
-      BufferedReader reader = new BufferedReader(new FileReader("kraftwerkDetails.txt"));
+      BufferedReader reader = new BufferedReader(new FileReader(kw.getStringPath()));
 
       // Lese die erste Zeile
       String line = reader.readLine();
@@ -62,22 +63,22 @@ public class Elementverwaltung
         System.out.println("Neues Element ("+typ+") wird erstellt.");
                
           if (typ == "Wind"){
-              Wind wind = new Wind();
+              Wind wind = new Wind("kraftwerkDetails.txt");
               this.verwaltungsListeElementeEintragen(wind);
          }  
           
          if (typ == "Solar"){
-              Solar solar= new Solar();
+              Solar solar= new Solar("kraftwerkDetails.txt");
               this.verwaltungsListeElementeEintragen(solar);
          }  
           
          if (typ == "Windpark"){
-              Windpark windpark= new Windpark();
+              Windpark windpark= new Windpark("kraftwerkDetails.txt");
               this.verwaltungsListeElementeEintragen(windpark);
          }  
           
          if (typ == "Wasser"){
-              Wasser wasser= new Wasser();
+              Wasser wasser= new Wasser("kraftwerkDetails.txt");
               this.verwaltungsListeElementeEintragen(wasser);
          }  
 
