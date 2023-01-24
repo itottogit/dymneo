@@ -62,7 +62,7 @@ public class Elementverwaltung
     public void neuesElement(String typ)
     {
         System.out.println("Neues Element ("+typ+") wird erstellt.");
-      
+
         if (typ == "Wind"){
             Wind wind = new Wind();
             this.verwaltungsListeElementeEintragen(wind);

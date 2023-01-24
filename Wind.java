@@ -89,6 +89,6 @@ public class Wind extends Kraftwerk implements Serializable{
         // return  t.createTransformedShape(windkraftanlage);
     }
 
-
-
      }//erstelle Figur
+     
+
