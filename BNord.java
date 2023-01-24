@@ -10,7 +10,7 @@ import java.awt.*;
  * @author  Torsten Otto
  * @version 10/2022
  */
-public class BNord extends Element
+public class BNord extends Bezirk
 {
 
     /**

@@ -22,6 +22,8 @@ public abstract class Kraftwerk extends Element
     {
         // initialise instance variables
         status = true;
+        
+        //Kraftwerk kraftwerk = new Kraftwerk
     }
 
     /**

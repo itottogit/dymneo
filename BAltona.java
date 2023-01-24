@@ -10,7 +10,7 @@ import java.awt.*;
  * @author  Torsten Otto
  * @version 10/2022
  */
-public class BAltona extends Element
+public class BAltona extends Bezirk
 {
 
     /**

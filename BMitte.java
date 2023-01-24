@@ -10,7 +10,7 @@ import java.awt.*;
  * @author  Torsten Otto
  * @version 10/2022
  */
-public class BMitte extends Element
+public class BMitte extends Bezirk
 {
 
     /**

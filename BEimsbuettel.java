@@ -10,7 +10,7 @@ import java.awt.*;
  * @author  Torsten Otto
  * @version 10/2022
  */
-public class BEimsbuettel extends Element
+public class BEimsbuettel extends Bezirk
 {
 
     /**

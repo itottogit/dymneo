@@ -10,3 +10,28 @@ VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
+
+ public boolean markiereElemente(Point2D p)
+    {
+        
+        
+     for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+     { 
+         Element element = (Element) i.next();
+         Shape aktuelleFigur = element.gibAktuelleFigur();
+      if((aktuelleFigur.contains(p)) && (element instanceof Kraftwerk))
+      {
+         element.farbe = Color.red ;
+         element.markiert = true; 
+         System.out.println("true"); 
+      }
+      else 
+      {
+         element.farbe = Color.black;
+         element.markiert = false; 
+         System.out.println("false"); 
+      }     
+        
+     }
+     return(true); 
+    }
