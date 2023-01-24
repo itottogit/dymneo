@@ -22,9 +22,10 @@ public abstract class Kraftwerk extends Element
     public Kraftwerk(String filePath)
     {
         // initialise instance variables
-        
-        //Kraftwerk kraftwerk = new Kraftwerk
-        this.filePath = filePath; 
+
+        status = true;
+        this.filePath = filePath;
+
     }
 
     /**

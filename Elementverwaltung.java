@@ -21,22 +21,16 @@ public class Elementverwaltung
         verwaltungsListeElemente = new ArrayList<Element>();
         this.controller = controller;
     }
-<<<<<<< HEAD
-
     public static String detailsLesen() {
         StringBuilder sb = new StringBuilder();
         try {
-=======
     
-    public String detailsLesen() {
-    StringBuilder sb = new StringBuilder();
-    try {
+   
         
       DetailFenster fenster = new DetailFenster();
       
       // Öffne die Datei zum Lesen
       BufferedReader reader = new BufferedReader(new FileReader(kw.getStringPath()));
->>>>>>> 73bc759ecb3c3daabb25a62a3430a974e68a633b
 
             DetailFenster fenster = new DetailFenster();
 
