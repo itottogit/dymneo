@@ -21,11 +21,11 @@ public class Elementverwaltung
         verwaltungsListeElemente = new ArrayList<Element>();
         this.controller = controller;
     }
-    public static String detailsLesen() {
-        StringBuilder sb = new StringBuilder();
-        try {
-    
-   
+
+    public String detailsLesen() {
+    StringBuilder sb = new StringBuilder();
+    try {
+
         
       DetailFenster fenster = new DetailFenster();
       

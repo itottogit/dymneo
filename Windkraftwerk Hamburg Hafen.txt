@@ -1,8 +1,18 @@
 Name: Windpark Hamburg Hafen
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Adresse: In der Nähe von Altenwerder Kirchweg, 21129 Hamburg
 Firma: Hamburg Energie
+=======
+
+Adresse: In der Nähe von Altenwerder Kirchweg, 21129 Hamburg
+
+Firma: Hamburg Energie
+
+Art: Windkraftwerk
+
+>>>>>>> 73bc759ecb3c3daabb25a62a3430a974e68a633b
 =======
 
 Adresse: In der Nähe von Altenwerder Kirchweg, 21129 Hamburg
