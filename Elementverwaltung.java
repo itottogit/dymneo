@@ -31,10 +31,7 @@ public class Elementverwaltung
       DetailFenster fenster = new DetailFenster();
       
       // Öffne die Datei zum Lesen
-      BufferedReader reader = new BufferedReader(new FileReader(kw.getStringPath()));
-
-            DetailFenster fenster = new DetailFenster();
-
+     
             // Öffne die Datei zum Lesen
             BufferedReader reader = new BufferedReader(new FileReader("kraftwerkDetails.txt"));
 
@@ -65,7 +62,6 @@ public class Elementverwaltung
     public void neuesElement(String typ)
     {
         System.out.println("Neues Element ("+typ+") wird erstellt.");
-<<<<<<< HEAD
 
         if (typ == "Wind"){
             Wind wind = new Wind();
@@ -86,28 +82,6 @@ public class Elementverwaltung
             Wasser wasser= new Wasser();
             this.verwaltungsListeElementeEintragen(wasser);
         }  
-=======
-               
-          if (typ == "Wind"){
-              Wind wind = new Wind("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(wind);
-         }  
-          
-         if (typ == "Solar"){
-              Solar solar= new Solar("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(solar);
-         }  
-          
-         if (typ == "Windpark"){
-              Windpark windpark= new Windpark("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(windpark);
-         }  
-          
-         if (typ == "Wasser"){
-              Wasser wasser= new Wasser("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(wasser);
-         }  
->>>>>>> 73bc759ecb3c3daabb25a62a3430a974e68a633b
 
         controller.updateView();
     }
