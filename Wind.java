@@ -24,9 +24,9 @@ import java.awt.geom.CubicCurve2D;
 public class Wind extends Kraftwerk implements Serializable{
 
 
-    public Wind(String filePath) //Unser Konstruktor
+    public Wind(/**String filePath*/) //Unser Konstruktor
     {
-        super(filePath);
+        //super(filePath);
         xPosition = 80;
         yPosition = 100;
         farbe = Color.black;
@@ -88,6 +88,7 @@ public class Wind extends Kraftwerk implements Serializable{
         // t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
         // return  t.createTransformedShape(windkraftanlage);
     }
+
 
 
      }//erstelle Figur

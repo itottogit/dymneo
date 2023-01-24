@@ -31,10 +31,7 @@ public class Elementverwaltung
       DetailFenster fenster = new DetailFenster();
       
       // Öffne die Datei zum Lesen
-      BufferedReader reader = new BufferedReader(new FileReader(kw.getStringPath()));
-
-            DetailFenster fenster = new DetailFenster();
-
+     
             // Öffne die Datei zum Lesen
             BufferedReader reader = new BufferedReader(new FileReader("kraftwerkDetails.txt"));
 
@@ -66,26 +63,28 @@ public class Elementverwaltung
     {
         System.out.println("Neues Element ("+typ+") wird erstellt.");
       
-          if (typ == "Wind"){
-              Wind wind = new Wind("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(wind);
-         }  
-          
-         if (typ == "Solar"){
-              Solar solar= new Solar("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(solar);
-         }  
-          
-         if (typ == "Windpark"){
-              Windpark windpark= new Windpark("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(windpark);
-         }  
-          
-         if (typ == "Wasser"){
-              Wasser wasser= new Wasser("kraftwerkDetails.txt");
-              this.verwaltungsListeElementeEintragen(wasser);
-         }  
-     controller.updateView();
+        if (typ == "Wind"){
+            Wind wind = new Wind();
+            this.verwaltungsListeElementeEintragen(wind);
+        }  
+
+        if (typ == "Solar"){
+            Solar solar= new Solar();
+            this.verwaltungsListeElementeEintragen(solar);
+        }  
+
+        if (typ == "Windpark"){
+            Windpark windpark= new Windpark();
+            this.verwaltungsListeElementeEintragen(windpark);
+        }  
+
+        if (typ == "Wasser"){
+            Wasser wasser= new Wasser();
+            this.verwaltungsListeElementeEintragen(wasser);
+        }  
+
+        controller.updateView();
+
     }
 
     public void verwaltungsListeElementeEintragen(Element element)

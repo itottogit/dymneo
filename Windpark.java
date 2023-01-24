@@ -24,9 +24,9 @@ public class Windpark extends Wind
     /**
      * Konstruktor für einen Umriss von Windpark
      */
-    public Windpark(String filePath)
+    public Windpark(/**String filePath*/)
     {
-        super(filePath);
+        //super(filePath);
         // initialise instance variables
         //anlage1 = new Wind();
         //anlage2 = new Wind();
