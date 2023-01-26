@@ -269,9 +269,26 @@ public class Elementverwaltung
         }
     } 
 
+    
+    //public void openFileForMarkedElement(String filePath) {
+    //for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();) {
+       // Element element = (Element) i.next();
+      //  if (element.markiert && element.filePath != null) {
+       //     try {
+       //         Desktop.getDesktop().open(new File(element.filepath));
+       //     } catch (IOException e) {
+        //        System.out.println("Error opening file: " + e.getMessage());
+         //   }
+         //   break;
+      //  }
+   // }
+   // }
+
     public ArrayList getElementList()
     {
         return verwaltungsListeElemente;    
     }
+    
+    
 }
 
