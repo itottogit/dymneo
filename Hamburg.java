@@ -44,7 +44,7 @@ public class Hamburg
         harburg = new BHarburg();
         bergedorf = new BBergedorf();
         wandsbek = new BWandsbek();
-        wind = new Wind("kraftwerkDetails.txt", "HMitte");
+        wind = new Wind("Windkraftẃerk Hamburg Hafen.txt", "HMitte");
         wind1 = new Wind("kraftwerkDetails.txt", "HMitte");
         wind2 = new Wind("kraftwerkDetails.txt", "HMitte");
         wind3 = new Wind("kraftwerkDetails.txt","HMitte");
