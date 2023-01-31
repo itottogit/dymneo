@@ -19,7 +19,7 @@ public abstract class Kraftwerk extends Element
     /**
      * Constructor for objects of class Kraftwerk
      */
-    public Kraftwerk(/**String filePath*/)
+    public Kraftwerk(String filePath)
     {
         // initialise instance variables
 
@@ -39,7 +39,7 @@ public abstract class Kraftwerk extends Element
         status = neuerStatus;
     }
     
-    public String getStringPath(){
+    public String getFilePath(){
         return filePath;
     }
     

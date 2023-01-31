@@ -58,7 +58,6 @@ public abstract class Element implements Serializable{
         return shapeNeu;
         
     }
-    
     /**
      * Funktion zur Rotaton der Figur.
      * Erh�lt einen neuen orientierung. Dieser ersetzt. Dann wird die Methode zeichneElement aufgerufen.

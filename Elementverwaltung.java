@@ -11,6 +11,7 @@ public class Elementverwaltung
 {
     private Controller controller;
     private ArrayList<Element> verwaltungsListeElemente;
+    private ArrayList<Kraftwerk> kraftwerkListe;
     public  FileWriter fw;
     private Arrays details;
     private File txt;
@@ -19,6 +20,7 @@ public class Elementverwaltung
     public Elementverwaltung(Controller controller) 
     {
         verwaltungsListeElemente = new ArrayList<Element>();
+        kraftwerkListe = new ArrayList<Kraftwerk>();
         this.controller = controller;
     }
    
@@ -64,22 +66,22 @@ public class Elementverwaltung
         System.out.println("Neues Element ("+typ+") wird erstellt.");
 
         if (typ == "Wind"){
-            Wind wind = new Wind();
+            Wind wind = new Wind("kraftwerkDetails.txt");
             this.verwaltungsListeElementeEintragen(wind);
         }  
 
         if (typ == "Solar"){
-            Solar solar= new Solar();
+            Solar solar= new Solar("kraftwerkDetails.txt");
             this.verwaltungsListeElementeEintragen(solar);
         }  
 
         if (typ == "Windpark"){
-            Windpark windpark= new Windpark();
+            Windpark windpark= new Windpark("kraftwerkDetails.txt");
             this.verwaltungsListeElementeEintragen(windpark);
         }  
 
         if (typ == "Wasser"){
-            Wasser wasser= new Wasser();
+            Wasser wasser= new Wasser("kraftwerkDetails.txt");
             this.verwaltungsListeElementeEintragen(wasser);
         }  
 
@@ -89,7 +91,7 @@ public class Elementverwaltung
 
     public void verwaltungsListeElementeEintragen(Element element)
     {
-        verwaltungsListeElemente.add(element);        
+        verwaltungsListeElemente.add(element);
     }
 
     public void speichern()
@@ -223,6 +225,16 @@ public class Elementverwaltung
 
         }
     } 
+    
+    public String getFilePathOfMarkedElement() {
+    for (Kraftwerk kraftwerk : kraftwerkListe) {
+        if (kraftwerk.markiert) {
+            return kraftwerk.getFilePath();
+        }
+    }
+    return null;
+}
+
 
     public void verschiebeMarkierteElementeNachLinks()
     {
