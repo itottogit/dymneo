@@ -27,8 +27,8 @@ public class Solar extends Kraftwerk implements Serializable{
         orientierung = 0;
         hoehe = 50;
         breite = 75;
-        faktorHoehe  = 1;
-        faktorBreite = 1;
+        faktorHoehe  = 0.25f;
+        faktorBreite = 0.25f;
         markiert = false;
         
         figur = gibAktuelleFigur();

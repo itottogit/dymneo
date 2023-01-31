@@ -33,8 +33,8 @@ public class Wind extends Kraftwerk implements Serializable{
         orientierung = 0;
         hoehe = 50;
         breite = 20;
-        faktorHoehe  = 1;
-        faktorBreite = 1;
+        faktorHoehe  = 0.2f;
+        faktorBreite = 0.2f;
         markiert = false;
         
         figur = gibAktuelleFigur();

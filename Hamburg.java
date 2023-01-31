@@ -106,8 +106,8 @@ public class Hamburg
         solar2.bewegeVertikal(365);
         
         atom = new Atom("kraftwerkDetails.txt", "HMitte"); ev.verwaltungsListeElementeEintragen(atom);
-        atom.bewegeHorizontal(500);
-        atom.bewegeVertikal(200);
+        atom.bewegeHorizontal(650);
+        atom.bewegeVertikal(450);
         
         wasser = new Wasser("kraftwerkDetails.txt", "HMitte"); ev.verwaltungsListeElementeEintragen(wasser);
         wasser.bewegeHorizontal(200);
