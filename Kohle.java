@@ -21,8 +21,8 @@ import java.awt.geom.CubicCurve2D;
 public class Kohle extends Kraftwerk implements Serializable{
 
 
-    public Kohle(String filePath) {
-        super(filePath);
+    public Kohle(String filePath, String bezirk) {
+        super(filePath,bezirk);
         xPosition = 200;
     
         yPosition = 200;
