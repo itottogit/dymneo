@@ -189,6 +189,19 @@ public void verschiebeElement(int richtung, int weite)
             farbe = "schwarz"; 
         }
     }
+    
+    
+    public void bewegeHorizontal(int newX)
+    {
+        xPosition = newX;
+        figur = gibAktuelleFigur();
+    }
+    
+    public void bewegeVertikal(int newY)
+    {
+        yPosition = newY;
+        figur = gibAktuelleFigur();
+    }
 }//class
     
     
