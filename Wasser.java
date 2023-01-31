@@ -39,19 +39,20 @@ public class Wasser extends Kraftwerk implements Serializable{
     protected Shape gibAktuelleFigur()
     {
           // einen GeneralPath definieren
-        GeneralPath shape = new GeneralPath();
-        shape.moveTo(0 , 0);
-        shape.lineTo(breite, 0);
-        shape.lineTo(breite+(breite/20+1), tiefe);
-        shape.lineTo(-(breite/20+1), tiefe);
-        shape.lineTo(0 , 0);
-        // Das ist die Umrandung. Das Wasser bekommt noch eine Lehne:
-        shape.moveTo(0 , (breite/10+1));
-        shape.lineTo(breite, (breite/10+1));    
-        // transformieren:
-        Shape newShape = transformiere(shape);
-        return  newShape;
+        GeneralPath wasser = new GeneralPath();
         
+        Shape arc1 = new Arc2D.Float(xPosition, yPosition-10, breite+60, tiefe+100, 190, 160, Arc2D.OPEN);
+        wasser.append(arc1,true);
+        
+        wasser.moveTo(xPosition+1, yPosition+48);
+        wasser.lineTo(yPosition-60, xPosition+50);
+        
+        wasser.moveTo(xPosition+89, yPosition+48);
+        wasser.lineTo(yPosition-60, xPosition+50);
+        
+        // transformieren:
+        Shape newShape = transformiere(wasser);
+        return  newShape;
 
      }//erstelle Figur
      
