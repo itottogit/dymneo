@@ -44,17 +44,17 @@ public class Hamburg
         harburg = new BHarburg();
         bergedorf = new BBergedorf();
         wandsbek = new BWandsbek();
-        wind = new Wind("kraftwerkDetails.txt");
-        wind1 = new Wind("kraftwerkDetails.txt");
-        wind2 = new Wind("kraftwerkDetails.txt");
-        wind3 = new Wind("kraftwerkDetails.txt");
-        kohle = new Kohle("kraftwerkDetails.txt");
-        kohle2 = new Kohle("kraftwerkDetails.txt");
-        solar = new Solar("kraftwerkDetails.txt");
-        solar1 = new Solar("kraftwerkDetails.txt");
-        solar2 = new Solar("kraftwerkDetails.txt");
-        atom = new Atom("kraftwerkDetails.txt");
-        wasser = new Wasser("kraftwerkDetails.txt");
+        wind = new Wind("kraftwerkDetails.txt", "HMitte");
+        wind1 = new Wind("kraftwerkDetails.txt", "HMitte");
+        wind2 = new Wind("kraftwerkDetails.txt", "HMitte");
+        wind3 = new Wind("kraftwerkDetails.txt","HMitte");
+        kohle = new Kohle("kraftwerkDetails.txt", "HMitte");
+        kohle2 = new Kohle("kraftwerkDetails.txt", "Umgebung");
+        solar = new Solar("kraftwerkDetails.txt", "HMitte");
+        solar1 = new Solar("kraftwerkDetails.txt", "HMitte");
+        solar2 = new Solar("kraftwerkDetails.txt", "HMitte");
+        atom = new Atom("kraftwerkDetails.txt","HMitte");
+        wasser = new Wasser("kraftwerkDetails.txt", "HMitte");
        
         
     }
@@ -63,6 +63,11 @@ public class Hamburg
     {
         mitte = new BMitte(); ev.verwaltungsListeElementeEintragen(mitte);
         nord = new BNord(); ev.verwaltungsListeElementeEintragen(nord);
+        eimsbuettel = new BEimsbuettel(); ev.verwaltungsListeElementeEintragen(eimsbuettel);
+        altona = new BAltona(); ev.verwaltungsListeElementeEintragen(altona);
+        harburg = new BHarburg(); ev.verwaltungsListeElementeEintragen(harburg);
+        bergedorf = new BBergedorf(); ev.verwaltungsListeElementeEintragen(bergedorf);
+        wandsbek = new BWandsbek(); ev.verwaltungsListeElementeEintragen(wandsbek);
         
         wind = new Wind(); ev.verwaltungsListeElementeEintragen(wind);
         wind.bewegeHorizontal(325);
@@ -107,13 +112,6 @@ public class Hamburg
         wasser = new Wasser(); ev.verwaltungsListeElementeEintragen(wasser);
         wasser.bewegeHorizontal(200);
         wasser.bewegeVertikal(300);
-       
-
-        eimsbuettel = new BEimsbuettel(); ev.verwaltungsListeElementeEintragen(eimsbuettel);
-        altona = new BAltona(); ev.verwaltungsListeElementeEintragen(altona);
-        harburg = new BHarburg(); ev.verwaltungsListeElementeEintragen(harburg);
-        bergedorf = new BBergedorf(); ev.verwaltungsListeElementeEintragen(bergedorf);
-        wandsbek = new BWandsbek(); ev.verwaltungsListeElementeEintragen(wandsbek);
     }
     
     
