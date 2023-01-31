@@ -18,9 +18,9 @@ import java.awt.geom.AffineTransform;
 public class Solar extends Kraftwerk implements Serializable{
 
 
-    public Solar(String filePath) //Unser Konstruktor
+    public Solar(String filePath, String bezirk) //Unser Konstruktor
     {
-        super(filePath);
+        super(filePath, bezirk);
         xPosition = 60;
         yPosition = 50;
         farbe = Color.black;
