@@ -19,7 +19,7 @@ public abstract class Kraftwerk extends Element
     /**
      * Constructor for objects of class Kraftwerk
      */
-    public Kraftwerk(String filePath)
+    public Kraftwerk(String filePath, String bezirk)
     {
         // initialise instance variables
 

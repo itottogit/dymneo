@@ -15,9 +15,9 @@ import java.awt.Graphics2D;
 public class Wasser extends Kraftwerk implements Serializable{
 
 
-    public Wasser(String filePath) //Unser Konstruktor
+    public Wasser(String filePath, String bezirk) //Unser Konstruktor
     {
-        super(filePath);
+        super(filePath, bezirk);
         xPosition = 70;
         yPosition = 30;
         farbe = Color.black;

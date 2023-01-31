@@ -66,22 +66,22 @@ public class Elementverwaltung
         System.out.println("Neues Element ("+typ+") wird erstellt.");
 
         if (typ == "Wind"){
-            Wind wind = new Wind("kraftwerkDetails.txt");
+            Wind wind = new Wind("kraftwerkDetails.txt", "Ohne Bezirk");
             this.verwaltungsListeElementeEintragen(wind);
         }  
 
         if (typ == "Solar"){
-            Solar solar= new Solar("kraftwerkDetails.txt");
+            Solar solar= new Solar("kraftwerkDetails.txt", "Ohne Bezirk");
             this.verwaltungsListeElementeEintragen(solar);
         }  
 
         if (typ == "Windpark"){
-            Windpark windpark= new Windpark("kraftwerkDetails.txt");
+            Windpark windpark= new Windpark("kraftwerkDetails.txt", "Ohne Bezirk");
             this.verwaltungsListeElementeEintragen(windpark);
         }  
 
         if (typ == "Wasser"){
-            Wasser wasser= new Wasser("kraftwerkDetails.txt");
+            Wasser wasser= new Wasser("kraftwerkDetails.txt", "Ohne Bezirk");
             this.verwaltungsListeElementeEintragen(wasser);
         }  
 

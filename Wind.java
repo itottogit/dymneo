@@ -24,9 +24,9 @@ import java.awt.geom.CubicCurve2D;
 public class Wind extends Kraftwerk implements Serializable{
 
 
-    public Wind(String filePath) //Unser Konstruktor
+    public Wind(String filePath, String bezirk) //Unser Konstruktor
     {
-        super(filePath);
+        super(filePath, bezirk);
         xPosition = 80;
         yPosition = 100;
         farbe = Color.black;
