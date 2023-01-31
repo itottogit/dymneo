@@ -49,6 +49,7 @@ public class Wind extends Kraftwerk implements Serializable{
     protected Shape gibAktuelleFigur()
     {
        // einen GeneralPath definieren
+         
         GeneralPath windkraftanlage = new GeneralPath();
         windkraftanlage.moveTo(0 , 0);
         windkraftanlage.lineTo(breite, 0);
@@ -85,6 +86,8 @@ public class Wind extends Kraftwerk implements Serializable{
         // AffineTransform t = new AffineTransform();
         // t.translate(xPosition, yPosition);
         // Rectangle2D umriss = windkraftanlage.getBounds2D();
+        // t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
+        // return  t.createTransformedShape(windkraftanlage);age.getBounds2D();
         // t.rotate(Math.toRadians(orientierung),umriss.getX()+umriss.getWidth()/2,umriss.getY()+umriss.getHeight()/2);
         // return  t.createTransformedShape(windkraftanlage);
     }
