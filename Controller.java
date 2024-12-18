@@ -8,23 +8,30 @@
   public class Controller extends MouseInputAdapter implements ActionListener, ListSelectionListener
   {
     
-    private ToolFrame toolFrame;
+    //Der Controller wird zunächst erzeugt und ist die zentrale Schaltstelle.
+    //Hier werden daher die anderen wichtigen Objekte erzeugt.
+      
+    private   ToolFrame   toolFrame;
     protected CanvasFrame canvasFrame;
-    private SoundOutput soundOutput;
+    private   SoundOutput soundOutput;
     
-    private Elementverwaltung ev;
+    private   Elementverwaltung ev;
     
-    private String auswahl;
+    private   String      auswahl;
     
     
     public Controller() 
     {
+        
+        //Beim Erzeugen des ToolFrame erhält dieser mittels des Parameters
+        //"this" eine Referenz auf dieses Objekt, den Controller.
         toolFrame = new ToolFrame(this);
         toolFrame.setVisible(true);
         
-        canvasFrame  = new CanvasFrame("Energiekarte",800,600,Color.white,this);
-       
-        //soundOutput = new SoundOutput();
+        canvasFrame  = new CanvasFrame("Mobilitätskarte",800,600,Color.white,this);
+        
+        //Sound ist deaktiviert.
+        soundOutput = new SoundOutput();
         
         ev = new Elementverwaltung(this); 
         Hamburg hh = new Hamburg(ev); canvasFrame.updateList(ev.getElementList());
@@ -83,7 +90,7 @@
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("links")))
       {
-          // Der Knopf Verschiebe links wurde gedr�ckt. 
+          // Der Knopf Verschiebe links wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachLinks();
           canvasFrame.updateList(ev.getElementList());
@@ -101,7 +108,7 @@
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("unten")))
       {
-          // Der Knopf Verschiebe unten wurde gedr�ckt. 
+          // Der Knopf Verschiebe unten wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachUnten();
           canvasFrame.updateList(ev.getElementList());
@@ -155,24 +162,27 @@
       int knopf = evt.getButton();  
       Point p = new Point(evt.getX(), evt.getY());
       ev.markiereElemente(p); 
-      // switch (knopf) {
-       // case 1:  if (ev.markiereElemente(p))
-                     // {soundOutput.sonar();}
-                     // else 
-                     // {soundOutput.teeswing();};
-                     // System.out.println("Maustaste  " + knopf);
-                     // break;
+      switch (knopf) 
+      {
+        case 1:  if (ev.markiereElemente(p))
+                     {soundOutput.sonar();}
+                     else 
+                     {soundOutput.teeswing();};
+                     System.out.println("Maustaste  " + knopf);
+                     break;
                      
-       // case 2:   System.out.println("Maustaste  " + knopf);  
-                 // break;
+        case 2:  System.out.println("Maustaste  " + knopf);  
+                 break;
       
-       // case 3:   System.out.println("Maustaste  " + knopf);  
-                 // break;
-      // }
+        case 3:  System.out.println("Maustaste  " + knopf);  
+                 break;
       
-       canvasFrame.neuZeichnen();
-       System.out.println("Maus geklickt bei Stelle: " + p.toString());
-    }  
+      }
+         
+      canvasFrame.neuZeichnen();
+      System.out.println("Maus geklickt bei Stelle: " + p.toString());
+        
+    }
     
     public void mouseReleased(MouseEvent evt)
     {

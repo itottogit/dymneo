@@ -1,9 +1,0 @@
-Name: Pumpspeicherkraftwerk Geesthacht 
-
-Adresse: Elbuferstraße 49, 21502 Geesthacht
-
-Firma: Vattenfall
-
-Art: Wasserkraftwerk
-
-Leistung: 120 MW

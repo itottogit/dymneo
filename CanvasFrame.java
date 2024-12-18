@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.geom.*;
 
 /**
- * Write a description of class CanvasFrame here.
+ * Dieses Fenster enthält die Leinwand, auf der Elemente gezeichnet werden können.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author iTOtto 
+ * @version 12/24
  */
 public class CanvasFrame extends JFrame
 {
@@ -47,14 +47,14 @@ public class CanvasFrame extends JFrame
         cp.repaint();
      }
     
-/**
- * Write a description of class CanvasPanel here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class CanvasPanel extends JPanel
-{
+  /**
+   * Hier wird tatsächlich gezeichnet. Das CanvasPanel ist eine interne Klasse.
+   * 
+   * @author (your name) 
+   * @version (a version number or a date)
+   */
+  public class CanvasPanel extends JPanel
+  {
     // instance variables - replace the example below with your own
     private ArrayList shapes;
 
@@ -71,12 +71,7 @@ public class CanvasPanel extends JPanel
                
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
+    
      public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
@@ -93,9 +88,7 @@ public class CanvasPanel extends JPanel
                 g2d.setColor((Color)element.farbe);
             }
             g2d.draw(element.figur); 
-//          if (i == selectedIndex) {
-//              drawInfo(g2d, i);
-//          }   
+ 
         }
      }
      
@@ -116,6 +109,6 @@ public class CanvasPanel extends JPanel
      }
       
      
-}
+  }
 
 }

@@ -1,9 +1,0 @@
-Name: Heizwerk Haferwerk
-
-Adresse: aferweg
-
-Firma: Wärme Hamburg
-
-Art: Gaskraftwerk
-
-Leistung: unbekannt

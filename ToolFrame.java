@@ -1,3 +1,10 @@
+/**
+ * Ein Fenster mit einer Liste und diversen Buttons
+ *
+ * @author iTOtto
+ * @version 12/24
+ */
+
   import java.awt.*;
   import javax.swing.event.*;
   import java.awt.event.*;
@@ -6,32 +13,28 @@
   
   public class ToolFrame extends JFrame {
       
-//    private Zeichenbereich zeichenbereich;
     public JList list;
     
     
     public ToolFrame (Controller controller) {
-      super ("Werkzeuge");
+      super ("Werkzeuge"); //Aufruf des Konstruktors von JFrame
         
       setSize(410, 300);
-      getContentPane().setLayout(null);
+      getContentPane().setLayout(null); //Das Layout wird per Hand codiert.
 
-    // Hier wird das Men� erzeugt:
+    // Hier wird das Menü erzeugt:
     MenuBar menueLeiste = new MenuBar();
     // Ein Menue anlegen
     Menu datei = new Menu("Datei");
     // Einen Menueeintrag anlegen
     MenuItem beenden = new MenuItem("Beenden");
-  //  setCtrlAccelerator(datei, 'E');
     beenden.setActionCommand("guibeende");
     beenden.addActionListener(controller);
     // Den Eintrag dem Menue hinzufuegen
     MenuItem lade = new MenuItem("Laden");
-  //  setCtrlAccelerator(datei, 'A');
     lade.setActionCommand("guilade");
     lade.addActionListener(controller);
     MenuItem speicher = new MenuItem("Speichern");
-   // setCtrlAccelerator(datei, 'S');
     speicher.setActionCommand("guispeicher");
     speicher.addActionListener(controller);
     datei.add(lade);
@@ -52,13 +55,12 @@
     ueber.addActionListener(controller);
     // Das Untermenue mit Eintraegen fuellen
     
-    // Das Extramen� der Leiste hinzuf�gen
+    // Das Extramenü der Leiste hinzufügen
     extra.add(ueber);
     menueLeiste.add(extra);
     setMenuBar(menueLeiste);
 
-      // Hier wird der Knopf f�r die Erstellung eines neuen Elements
-      // erstellt. 
+      // Hier wird der Knopf für Testzwecke erstellt.
       JButton testKnopf = new JButton("Testknopf");
       testKnopf.setHorizontalAlignment(SwingConstants.CENTER);
       testKnopf.setBounds(0, 145, 90, 160);
@@ -67,7 +69,7 @@
     
     
     
-      // Hier wird der Knopf f�r die Erstellung eines neuen Elements
+      // Hier wird der Knopf für die Erstellung eines neuen Elements
       // erstellt. 
       JButton neuesElementKnopf = new JButton("Objekt hinzufügen");
       neuesElementKnopf.setHorizontalAlignment(SwingConstants.CENTER);
@@ -76,7 +78,7 @@
       getContentPane().add(neuesElementKnopf);
       
       
-     // Hier wird der Knopf f�r das Rechtsverschieben eines markierten M�belst�cks
+     // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeRechts = new JButton("rechts");
       verschiebeRechts.setHorizontalAlignment(SwingConstants.CENTER);
@@ -91,7 +93,7 @@
       verschiebeLinks.addActionListener(controller);
       getContentPane().add(verschiebeLinks);  
       
-      // Hier wird der Knopf f�r das Hochverschiebenverschieben eines markierten M�belst�cks
+      // Hier wird der Knopf für das Hochverschiebenverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeOben = new JButton("oben");
       verschiebeOben.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,7 +101,7 @@
       verschiebeOben.addActionListener(controller);
       getContentPane().add(verschiebeOben);
       
-      // Hier wird der Knopf f�r das Abwärtsverschieben eines markierten M�belst�cks
+      // Hier wird der Knopf für das Abwärtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeUnten = new JButton("unten");
       verschiebeUnten.setHorizontalAlignment(SwingConstants.CENTER);
@@ -107,7 +109,7 @@
       verschiebeUnten.addActionListener(controller);
       getContentPane().add(verschiebeUnten);
       
-      //Button zum anzeigen der details
+      //Button zum Anzeigen der Details
      
      JButton details = new JButton("Details");
      details.setHorizontalAlignment(SwingConstants.CENTER);
@@ -115,20 +117,11 @@
       details.addActionListener(controller);
       getContentPane().add(details);
      
-      // Hier wird der Knopf f�r das Linksverschieben eines markierten M�belst�cks
-      // erstellt. 
-
       
-      // Hier wird der Knopf f�r das Hochverschiebenverschieben eines markierten M�belst�cks
-      // erstellt. 
-
-      
-      // Hier wird der Knopf f�r das Abwärtsverschieben eines markierten M�belst�cks
-      // erstellt. 
- 
      
-     //JLIst f�r die verschiedenen M�bel
-      String [] eintraege = {"Wind",  "Windpark", "Solar", "Wasser"};
+     
+     //JLIst für die verschiedenen Fahrzeuge
+      String [] eintraege = {"Auto",  "Fahrrad", "Bus", "Fähre"};
       list = new JList(eintraege);
       
       JScrollPane scroller = new JScrollPane(list);

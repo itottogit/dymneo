@@ -1,9 +1,0 @@
-Name: Solarthermie Hafen City
-
-Adresse: Hafen City
-
-Firma: Vattenfall/privat
-
-Art: Solarkraftwerk
-
-Leistung: unbekannt

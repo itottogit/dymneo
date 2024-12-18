@@ -1,57 +1,33 @@
-//import  sun.audio.*;    //import the sun.audio package
-import  java.io.*;
 
 /**
- * Write a description of class SoundOutput here.
+ * Klasse zum Abspielen von Tönen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author  iTOtto 
+ * @version 12/24
  */
 public class SoundOutput
 {
-    // instance variables - replace the example below with your own
-    private InputStream in;
-    //private AudioStream as;
+    // instance variables 
+    
+    
 
     /**
      * Constructor for objects of class SoundOutput
      */
     public SoundOutput()
     {
-        // initialise instance variables
+        // nichts zu tun
     }
 
  
     public void sonar()
     {
-       
-        // Open an input stream  to the audio file.
-        try{in = new FileInputStream("Sonar.au");}
-        catch(Exception e){}
-        // Create an AudioStream object from the input stream.
-        try{//as = new AudioStream(in); 
-        }
-        catch(Exception e){}
-        // Use the static class member "player" from class AudioPlayer to play
-        // clip.
-        //AudioPlayer.player.start(as);            
- 
+        System.out.println("Sound ist nicht implementiert.");
     }
 
    public void teeswing()
     {
-       
-        // Open an input stream  to the audio file.
-        try{in = new FileInputStream("Teeswing.au");}
-        catch(Exception e){}
-        // Create an AudioStream object from the input stream.
-        try{//as = new AudioStream(in); 
-        }
-        catch(Exception e){}
-        // Use the static class member "player" from class AudioPlayer to play
-        // clip.
-        //AudioPlayer.player.start(as);            
- 
+        System.out.println("Sound ist nicht implementiert.");   
     }
 
 }

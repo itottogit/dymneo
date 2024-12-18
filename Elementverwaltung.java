@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+ import java.util.ArrayList;
 import java.util.Iterator;
 import java.io.*;
 import java.awt.*;
@@ -11,16 +11,16 @@ public class Elementverwaltung
 {
     private Controller controller;
     private ArrayList<Element> verwaltungsListeElemente;
-    private ArrayList<Kraftwerk> kraftwerkListe;
+    private ArrayList<Fahrzeug> fahrzeugListe;
     public  FileWriter fw;
     private Arrays details;
     private File txt;
-    private Kraftwerk kw;
+
 
     public Elementverwaltung(Controller controller) 
     {
         verwaltungsListeElemente = new ArrayList<Element>();
-        kraftwerkListe = new ArrayList<Kraftwerk>();
+        fahrzeugListe = new ArrayList<Fahrzeug>();
         this.controller = controller;
     }
    
@@ -29,13 +29,12 @@ public class Elementverwaltung
     StringBuilder sb = new StringBuilder();
     try {
 
-        
-      DetailFenster fenster = new DetailFenster();
+    DetailFenster fenster = new DetailFenster();
       
       // Öffne die Datei zum Lesen
      
             // Öffne die Datei zum Lesen
-            BufferedReader reader = new BufferedReader(new FileReader("kraftwerkDetails.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("FahrzeugDetails.txt"));
 
             // Lese die erste Zeile
             String line = reader.readLine();
@@ -65,24 +64,18 @@ public class Elementverwaltung
     {
         System.out.println("Neues Element ("+typ+") wird erstellt.");
 
-        if (typ == "Wind"){
-            Wind wind = new Wind("kraftwerkDetails.txt", "Ohne Bezirk");
-            this.verwaltungsListeElementeEintragen(wind);
+        if (typ == "Auto"){
+            Auto auto = new Auto();
+            this.verwaltungsListeElementeEintragen(auto);
         }  
 
-        if (typ == "Solar"){
-            Solar solar= new Solar("kraftwerkDetails.txt", "Ohne Bezirk");
-            this.verwaltungsListeElementeEintragen(solar);
+        if (typ == "Fahrrad"){
+             }  
+
+        if (typ == "Bus"){
         }  
 
-        if (typ == "Windpark"){
-            Windpark windpark= new Windpark("kraftwerkDetails.txt", "Ohne Bezirk");
-            this.verwaltungsListeElementeEintragen(windpark);
-        }  
-
-        if (typ == "Wasser"){
-            Wasser wasser= new Wasser("kraftwerkDetails.txt", "Ohne Bezirk");
-            this.verwaltungsListeElementeEintragen(wasser);
+        if (typ == "Fähre"){
         }  
 
         controller.updateView();
@@ -93,10 +86,15 @@ public class Elementverwaltung
     {
         verwaltungsListeElemente.add(element);
     }
+    
+    public void fahrzeugListeElementEintragen(Fahrzeug fahrzeug)
+    {
+        fahrzeugListe.add(fahrzeug);
+    }
 
     public void speichern()
     {
-        System.out.println("Man müsste mal was programmieren, damit man seine Einrichtungen auch speichern kann...");
+        System.out.println("Man müsste mal was programmieren, damit man seine Fahrzeuge auch speichern kann...");
     } 
 
     /**
@@ -144,12 +142,14 @@ public class Elementverwaltung
     public boolean markiereElemente(Point2D p)
     {
 
-        boolean gefunden= false;    
+        boolean gefunden=false;    
+        
+        //Hier einmal ein Beispiel für eine for-Schleife mit Iterator
         for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
         { 
             Element element = (Element) i.next();
             Shape aktuelleFigur = element.gibAktuelleFigur();
-            if((aktuelleFigur.contains(p)) && (element instanceof Kraftwerk))
+            if((aktuelleFigur.contains(p)) && (element instanceof Fahrzeug))
             {
 
                 element.farbe = Color.red ;
@@ -165,14 +165,15 @@ public class Elementverwaltung
             }     
 
         }
-        if(gefunden==false){
-            for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+        if(!gefunden) //oder if(gefunden==false)
+        {
+            for (Element element: verwaltungsListeElemente) //hier als for each
             { 
-                Element element = (Element) i.next();
+
                 Shape aktuelleFigur = element.gibAktuelleFigur();
-                if((aktuelleFigur.contains(p)) && (element instanceof Bezirk) && (!(element instanceof Kraftwerk)) )
+                if((aktuelleFigur.contains(p)) && (element instanceof Bezirk) && (!(element instanceof Fahrzeug)) )
                 {
-                    element.farbe = Color.red ;
+                    element.farbe = Color.green;
                     element.markiert = true; 
                     System.out.println("true");  
                 }
@@ -181,36 +182,7 @@ public class Elementverwaltung
         return(true); 
     }
 
-    // public boolean markiereElement(Point2D p){
-    // for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
-    // { 
-    // Element element = (Element) i.next();
-    // Shape aktuelleFigur = element.gibAktuelleFigur();
-    // if((aktuelleFigur.contains(p)) && (element instanceof Bezirk))
-    // {
-    // element.farbe = Color.red ;
-    // element.markiert = true; 
-    // System.out.println("true"); 
-    // }
-
-    // // if((aktuelleFigur.contains(p)) && (element instanceof Bezirk))
-    // // {
-    // //element.farbe = Color.red ;
-    // //element.markiert = true; 
-    // //System.out.println("true");  
-    // // }
-
-    // else  {
-
-    // element.farbe = Color.black;
-    // element.markiert = false; 
-    // System.out.println("false"); 
-    // }     
-
-    // }
-    // return(true);
-    // }
-
+    
     public void verschiebeMarkierteElementeNachRechts()
     {
         for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
@@ -226,81 +198,30 @@ public class Elementverwaltung
         }
     } 
     
-    public String getFilePathOfMarkedElement() {
-    for (Kraftwerk kraftwerk : kraftwerkListe) {
-        if (kraftwerk.markiert) {
-            return kraftwerk.getFilePath();
-        }
-    }
-    return null;
-}
+ 
 
 
     public void verschiebeMarkierteElementeNachLinks()
     {
-        for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
-        {
-            Element element = (Element) i.next();
-
-            if(element.markiert)
-            {
-                element.verschiebeElement(4,20);
-                element.figur = element.gibAktuelleFigur();
-            }       
-
-        }
+   
     } 
 
     public void verschiebeMarkierteElementeNachOben()
     {
-        for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
-        {
-            Element element = (Element) i.next();
-
-            if(element.markiert)
-            {
-                element.verschiebeElement(1,20);
-                element.figur = element.gibAktuelleFigur();
-            }       
-
-        }
+    
     } 
 
     public void verschiebeMarkierteElementeNachUnten()
     {
-        for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
-        {
-            Element element = (Element) i.next();
-
-            if(element.markiert)
-            {
-                element.verschiebeElement(2,20);
-                element.figur = element.gibAktuelleFigur();
-            }       
-
-        }
+    
     } 
 
-    
-    //public void openFileForMarkedElement(String filePath) {
-    //for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();) {
-       // Element element = (Element) i.next();
-      //  if (element.markiert && element.filePath != null) {
-       //     try {
-       //         Desktop.getDesktop().open(new File(element.filepath));
-       //     } catch (IOException e) {
-        //        System.out.println("Error opening file: " + e.getMessage());
-         //   }
-         //   break;
-      //  }
-   // }
-   // }
-
+ 
     public ArrayList getElementList()
     {
         return verwaltungsListeElemente;    
     }
     
-    
+  
 }
 

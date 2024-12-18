@@ -1,7 +1,0 @@
-Name: Heizwerk Eppendorf
-
-Adresse: Martinistraße 52
-
-Firma: UKE/Wärme Hamburg
-
-Leistung: unbekannt

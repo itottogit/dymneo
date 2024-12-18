@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class starter here.
+ * Diese Klasse enthält nur die main-Methode.
  * 
- * @author KKG-Profil 
- * @version 01/2023
+ * @author  iTOtto 
+ * @version 12/24
  */
 public class starter
 {
@@ -13,19 +13,19 @@ public class starter
      */
     public starter()
     {
-        // initialise instance variables
+        // nichts zu tun
         
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Diese Methode wird einmal beim Programmstart ausgeführt.
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  args   Hier kann ein Array von Strings übergeben werden.
+     * @return void
      */
     public static void main(String[] args)
     {
-        // put your code here
+        // Der Controller wird erzeugt und übernimmt alles Weitere.
         Controller controller= new Controller();
     }
 }

@@ -1,7 +1,0 @@
-Name: Heizkraftwerk Hafen City
-
-Adresse: Heizkraftwerk Hafen City 20457, Hamburg
-
-Firma: Wärme Hamburg
-
-Art: Gaskraftwerk
