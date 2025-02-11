@@ -16,7 +16,7 @@ public class Cybertruck extends Fahrzeug
     /**
      * Erzeuge ein neues Cybertruck mit einer Standardfarbe und Standardgroesse
      * an einer Standardposition. (Standardkonstruktor)
-     * :):)
+     * :):):)
      */
     public Cybertruck() {
         xPosition = 80;
