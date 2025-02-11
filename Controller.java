@@ -10,7 +10,8 @@
     
     //Der Controller wird zunächst erzeugt und ist die zentrale Schaltstelle.
     //Hier werden daher die anderen wichtigen Objekte erzeugt.
-      
+    //
+    
     private   ToolFrame   toolFrame;
     protected CanvasFrame canvasFrame;
     private   SoundOutput soundOutput;
