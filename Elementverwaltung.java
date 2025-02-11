@@ -15,12 +15,14 @@ public class Elementverwaltung
     public  FileWriter fw;
     private Arrays details;
     private File txt;
-
+    private ArrayList<Rezension> Rezensionen;
+    
 
     public Elementverwaltung(Controller controller) 
     {
         verwaltungsListeElemente = new ArrayList<Element>();
         fahrzeugListe = new ArrayList<Fahrzeug>();
+        Rezensionen = new ArrayList<Rezension>();
         this.controller = controller;
     }
    
@@ -203,17 +205,47 @@ public class Elementverwaltung
 
     public void verschiebeMarkierteElementeNachLinks()
     {
-   
+        for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+        {
+            Element element = (Element) i.next();
+
+            if(element.markiert)
+            {
+                element.verschiebeElement(4,20);
+                element.figur = element.gibAktuelleFigur();
+            }       
+
+        }
     } 
 
     public void verschiebeMarkierteElementeNachOben()
     {
-    
+      for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+        {
+            Element element = (Element) i.next();
+
+            if(element.markiert)
+            {
+                element.verschiebeElement(1,20);
+                element.figur = element.gibAktuelleFigur();
+            }       
+
+        }
     } 
 
     public void verschiebeMarkierteElementeNachUnten()
     {
-    
+        for (Iterator i = verwaltungsListeElemente.iterator(); i.hasNext();)
+        {
+            Element element = (Element) i.next();
+
+            if(element.markiert)
+            {
+                element.verschiebeElement(2,20);
+                element.figur = element.gibAktuelleFigur();
+            }       
+
+        }
     } 
 
  
