@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Bushaltestelle
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Buhaltestelle.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=
+comment1.target=Bushaltestelle()
+comment2.params=n\ x\ y
+comment2.target=Bushaltestelle(java.lang.String,\ int,\ int)
+comment3.params=
+comment3.target=java.awt.Shape\ gibAktuelleFigur()
+numComments=4

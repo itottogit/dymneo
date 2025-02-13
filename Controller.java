@@ -1,25 +1,21 @@
-  import java.awt.*;
-  import java.awt.event.*;
-  import javax.swing.*;
-  import javax.swing.event.*;
-  import java.awt.geom.Point2D; 
-  import java.awt.Point; 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.geom.Point2D;
+import java.awt.Point; 
   
   public class Controller extends MouseInputAdapter implements ActionListener, ListSelectionListener
   {
     
     //Der Controller wird zunächst erzeugt und ist die zentrale Schaltstelle.
     //Hier werden daher die anderen wichtigen Objekte erzeugt.
-    //
-    
+      
     private   ToolFrame   toolFrame;
     protected CanvasFrame canvasFrame;
     private   SoundOutput soundOutput;
-    
     private   Elementverwaltung ev;
-    
     private   String      auswahl;
-    
     
     public Controller() 
     {
@@ -35,7 +31,52 @@
         soundOutput = new SoundOutput();
         
         ev = new Elementverwaltung(this); 
-        Hamburg hh = new Hamburg(ev); canvasFrame.updateList(ev.getElementList());
+        Hamburg hh = new Hamburg(ev); 
+        canvasFrame.updateList(ev.getElementList());
+        
+        // erstellen von Bus/Bahn Haltestellen:
+        Haltestelle bergedorfZOB = new Bushaltestelle("Bergedorf ZOB", 300, 350);
+        showElement(bergedorfZOB);
+        
+        Haltestelle mümmelmannsberg = new Bushaltestelle("Mümmelmannsberg", 330, 330);
+        showElement(mümmelmannsberg);
+        
+        Haltestelle jungfernstieg = new Bushaltestelle("Jungfernstieg", 410, 290);
+        showElement(jungfernstieg);
+        
+        Haltestelle rathausmarkt = new Bushaltestelle("Rathausmarkt", 400, 300);
+        showElement(rathausmarkt);
+        
+        Haltestelle gänsemarkt = new Bushaltestelle("Gänsemarkt", 440, 320);
+        showElement(gänsemarkt);
+        
+        
+        Haltestelle niendorfnord = new UBahnhaltestelle("Niendorf Nord", 460, 250);
+        showElement(niendorfnord);
+        
+        Haltestelle hagenbeckstierpark = new UBahnhaltestelle("Hagenbecks Tierpark", 470, 260);
+        showElement(hagenbeckstierpark);
+        
+        Haltestelle schlump = new UBahnhaltestelle("Schlump", 430, 280);
+        showElement(schlump);
+        
+        Haltestelle hauptbahnhofnord = new UBahnhaltestelle("Hauptbahnhof Nord", 475, 310);
+        showElement(hauptbahnhofnord);
+        
+        Haltestelle berlinertor = new UBahnhaltestelle("Berliner Tor", 500, 320);
+        showElement(berlinertor);
+        
+        Haltestelle burgstraße = new UBahnhaltestelle("Burgstraße", 460, 330);
+        showElement(burgstraße);
+        
+         
+        Haltestelle hornerrennbahn = new UBahnhaltestelle("Horner Rennbahn", 500, 340);
+        showElement(hornerrennbahn);
+        
+    }
+    public void showElement(Element e) {
+        ev.verwaltungsListeElementeEintragen(e);
+        canvasFrame.updateList(ev.getElementList());
     }
     
     public void actionPerformed(ActionEvent evt)
@@ -198,7 +239,7 @@
     public void mouseExited(MouseEvent evt)
     {
       System.out.println("Maus verlässt die Fläche");
-    }   
+    }    
     
     public void mousePressed(MouseEvent evt)
     {
