@@ -70,16 +70,26 @@ public class Elementverwaltung
             Auto auto = new Auto();
             this.verwaltungsListeElementeEintragen(auto);
         }  
-
-        if (typ == "Fahrrad"){
-             }  
-
-        if (typ == "Bus"){
+                if (typ == "Fähre"){
+            Fähre fähre = new Fähre();
+            this.verwaltungsListeElementeEintragen(fähre);
+        }          
+                if (typ == "AuchAuto"){
+            AuchAuto auchauto = new AuchAuto();
+            this.verwaltungsListeElementeEintragen(auchauto);
         }  
-
-        if (typ == "Fähre"){
+                if (typ == "Cybertruck"){
+            Cybertruck cybertruck = new Cybertruck();
+            this.verwaltungsListeElementeEintragen(cybertruck);
         }  
-
+                if (typ == "Fahrad"){
+            Fahrad fahrad = new Fahrad();
+            this.verwaltungsListeElementeEintragen(fahrad);
+        }  
+                if (typ == "Pickup"){
+            Pickup pickup = new Pickup();
+            this.verwaltungsListeElementeEintragen(pickup);
+        }  
         controller.updateView();
 
     }
