@@ -1,8 +1,16 @@
+import java.io.PrintWriter;
+import java.nio.file.*;
+import java.io.Writer;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
- * Ein Fenster mit einer Liste und diversen Buttons
+ * Ein Fenster für das Feedback von verschiedenen Fahrzeugen.
  *
- * @author iTOtto
- * @version 12/24
+ * @author UnknownMemes
+ * @version 02/25
  */
 
   import java.awt.*;
@@ -16,7 +24,7 @@
             ErstelleGUI();
     }
     
-    private static void ErstelleGUI() {
+    private static void ErstelleGUI(){
         JFrame frame = new JFrame("Feedback");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(600, 400));
@@ -35,12 +43,23 @@
         panel.add(new JLabel("Schreibe deinen Feedback in hier:"));
         constraints.gridy++;
         panel.add(text,constraints);
-
+        
     
+
         text.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(text.getText());
+                 Writer writer = null;
+
+                try {
+                writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream("Feedbackliste.txt"), "utf-8"));
+                writer.write(text.getText());
+                } catch (IOException ex) {
+                // Report
+                } finally {
+               try {writer.close();} catch (Exception ex) {/*ignore*/}
+                }
             }
         });
         
