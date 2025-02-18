@@ -121,7 +121,7 @@
      
      
      //JLIst für die verschiedenen Fahrzeuge
-      String [] eintraege = {"Auto",  "Fahrrad", "eckigesauto", "Fähre", "Fahrad", "Pickup"};
+      String [] eintraege = {"Auto",  "Fahrrad", "eckigesauto", "Route","Fähre", "Fahrad", "Pickup"};
       list = new JList(eintraege);
       
       JScrollPane scroller = new JScrollPane(list);

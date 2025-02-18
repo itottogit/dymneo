@@ -90,6 +90,10 @@ public class Elementverwaltung
             Pickup pickup = new Pickup();
             this.verwaltungsListeElementeEintragen(pickup);
         }  
+        if (typ == "Route"){
+            Route route = new Route();
+            this.verwaltungsListeElementeEintragen(route);
+             }  
         controller.updateView();
 
     }
