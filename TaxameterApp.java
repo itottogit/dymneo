@@ -6,11 +6,11 @@ import java.awt.event.ActionListener;
 public class TaxameterApp {
     private static double price = 0.0; // Initial price
     private static boolean running = false; // To check if the taximeter is running
-    private static Timer timer; // Zeitr to update the price
+    private static Timer timer; // Timer to update the price
     private static int elapsedZeit = 0; // To keep track of elapsed time in seconds
     private static double pricePerMinute = 2.0; // Set the price increment per minute
 
-    public static void main(String[] args) {
+    public void init() {
         // Create the frame
         JFrame frame = new JFrame("Taxameter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +27,7 @@ public class TaxameterApp {
         frame.add(priceLabel, gbc);
 
         // Create a label to display the elapsed time
-        JLabel timeLabel = new JLabel("Zeit: 0 Stunden, 0 minuten, 0 sekunden");
+        JLabel timeLabel = new JLabel("Zeit: 0 Stunden, 0 Minuten, 0 Sekunden");
         timeLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         gbc.gridy = 1;
         frame.add(timeLabel, gbc);
@@ -105,7 +105,7 @@ public class TaxameterApp {
                 int seconds = elapsedZeit % 60;
 
                 // Update the time label
-                timeLabel.setText(String.format("Zeit: %d Stunde, %d minute, %d sekunde", Stunden, minutes, seconds));
+                timeLabel.setText(String.format("Zeit: %d Stunde, %d Minute, %d Sekunde", Stunden, minutes, seconds));
 
                 // Update the price display every second
                 double increment;
