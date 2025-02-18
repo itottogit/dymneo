@@ -5,10 +5,10 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE: dymNeo
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PURPOSE OF PROJECT: Better Google Maps
+VERSION or DATE: v0.1
+HOW TO START THIS PROJECT: Click Start
+AUTHORS: S1 WI
+USER INSTRUCTIONS: None
 
  
