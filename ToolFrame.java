@@ -1,3 +1,5 @@
+import java.awt.Menu;
+
 /**
  * Ein Fenster mit einer Liste und diversen Buttons
  *
@@ -16,10 +18,11 @@
     public JList list;
     
     
+    
     public ToolFrame (Controller controller) {
       super ("Werkzeuge"); //Aufruf des Konstruktors von JFrame
         
-      setSize(410, 300);
+      setSize(400, 350);
       getContentPane().setLayout(null); //Das Layout wird per Hand codiert.
 
     // Hier wird das Menü erzeugt:
@@ -76,12 +79,8 @@
       neuesElementKnopf.setBounds(120, 45, 160, 30);
       neuesElementKnopf.addActionListener(controller);
       getContentPane().add(neuesElementKnopf);
-        
-      JButton bewerte = new JButton("Bewerte");
-      bewerte.setHorizontalAlignment(SwingConstants.CENTER);
-      bewerte.setBounds(300, 160,100, 30);
-      bewerte.addActionListener(controller);
-      getContentPane().add(bewerte);       
+      
+      
      // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeRechts = new JButton("rechts");
@@ -125,7 +124,7 @@
      
      
      //JLIst für die verschiedenen Fahrzeuge
-      String [] eintraege = {"Auto",  "Fahrrad", "eckigesauto", "Route","Fähre", "Fahrad", "Pickup"};
+      String [] eintraege = {"Auto",  "Fahrrad", "Pickup", "Fähre"};
       list = new JList(eintraege);
       
       JScrollPane scroller = new JScrollPane(list);
