@@ -16,7 +16,7 @@ import java.awt.Point;
     private   SoundOutput soundOutput;
     private   Elementverwaltung ev;
     private   String      auswahl;
-    
+    protected Rezensionliste rl ;
     public Controller() 
     {
         
@@ -30,7 +30,10 @@ import java.awt.Point;
         //Sound ist deaktiviert.
         soundOutput = new SoundOutput();
         
+        rl = new Rezensionliste () ;
+        
         ev = new Elementverwaltung(this); 
+        
         Hamburg hh = new Hamburg(ev); 
         canvasFrame.updateList(ev.getElementList());
         
@@ -94,24 +97,6 @@ import java.awt.Point;
           ev.neuesElement(auswahl);   
       }
       
-            if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-           (((JButton) eventQuelle).getText().equals("Taxameter Öffnen")))
-      {
-          // Der Knopf "Objekt hinzufügen" wurde gedrückt. Es wird ein neues Element
-          // im Modell erstellt.
-          TaxameterApp app = new TaxameterApp();
-          app.init();
-          System.out.println("Taxameter geöffnet");  
-      }
-      
- 
-        if ((klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-
-    (((JButton) eventQuelle).getText().equals("MOIA Rufen"))) {
-    // Der Knopf "MOIA Rufen" wurde gedrückt. Ein Pop-up wird angezeigt.
-    JOptionPane.showMessageDialog(null, "MOIA wurde zu ihrem Standort gerufen");
-      }
-      
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("Testknopf")))
       {
@@ -122,7 +107,16 @@ import java.awt.Point;
           System.out.println("Action Test");
       } 
      
-     
+     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Bewerte")))
+      {
+        //Der Button zum anzeigen der Details wurde gedrueckt
+         
+        System.out.println("Bewerte");
+        rl.speichereRezension("Bewertung", 3);
+        System.out.println(rl.anzahlRezensionen());
+        
+        }    
       
     
     
@@ -262,11 +256,7 @@ import java.awt.Point;
     public void mousePressed(MouseEvent evt)
     {
       System.out.println("Maus gedrückt!");
-//       int x = evt.getX();
-//       int y = evt.getY();
-//       Rectangle currentRect = new Rectangle(x,y,0,0);
-//       updateDrawableRect(getWidth(), getHeight());
-//       repaint();
+
     }   
      
     
@@ -297,6 +287,6 @@ import java.awt.Point;
     {
         ev.laden();
     }
-    
+   
 
 }  

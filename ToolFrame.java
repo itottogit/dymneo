@@ -19,7 +19,7 @@
     public ToolFrame (Controller controller) {
       super ("Werkzeuge"); //Aufruf des Konstruktors von JFrame
         
-      setSize(600, 400);
+      setSize(410, 300);
       getContentPane().setLayout(null); //Das Layout wird per Hand codiert.
 
     // Hier wird das Menü erzeugt:
@@ -76,19 +76,12 @@
       neuesElementKnopf.setBounds(120, 45, 160, 30);
       neuesElementKnopf.addActionListener(controller);
       getContentPane().add(neuesElementKnopf);
-      
-      JButton neuesTaxameter = new JButton("Taxameter Öffnen");
-      neuesTaxameter.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesTaxameter.setBounds(300, 45, 160, 30);
-      neuesTaxameter.addActionListener(controller);
-      getContentPane().add(neuesTaxameter);
-      
-            JButton neuesMOIA = new JButton("MOIA Rufen");
-      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesMOIA.setBounds(300,100, 160, 30);
-      neuesMOIA.addActionListener(controller);
-      getContentPane().add(neuesMOIA);
-      
+        
+      JButton bewerte = new JButton("Bewerte");
+      bewerte.setHorizontalAlignment(SwingConstants.CENTER);
+      bewerte.setBounds(300, 160,100, 30);
+      bewerte.addActionListener(controller);
+      getContentPane().add(bewerte);       
      // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeRechts = new JButton("rechts");
