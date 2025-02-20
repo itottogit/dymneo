@@ -27,7 +27,6 @@ public class starter
     {
         // Der Controller wird erzeugt und übernimmt alles Weitere.
         Controller controller= new Controller();
-        TaxameterApp app = new TaxameterApp();
-        app.init();
+        
     }
 }

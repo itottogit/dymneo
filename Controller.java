@@ -94,6 +94,16 @@ import java.awt.Point;
           ev.neuesElement(auswahl);   
       }
       
+            if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Taxameter Öffnen")))
+      {
+          // Der Knopf "Objekt hinzufügen" wurde gedrückt. Es wird ein neues Element
+          // im Modell erstellt.
+          TaxameterApp app = new TaxameterApp();
+          app.init();
+          System.out.println("Taxameter geöffnet");  
+      }
+      
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("Testknopf")))
       {
