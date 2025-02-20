@@ -16,7 +16,7 @@ public class starter
         // nichts zu tun
         
     }
-
+    //Macht nix lol
     /**
      * Diese Methode wird einmal beim Programmstart ausgeführt.
      * 
