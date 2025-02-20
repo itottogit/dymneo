@@ -28,6 +28,7 @@ public class UserInterfaceMain extends JFrame {
     JMenuItem partner_item;
     JMenuItem karte_item;
     JMenuItem fahrzeuge_item;
+    JMenuItem taxameter_item;
 
     
     JButton Karte = new JButton("Karte");
@@ -36,6 +37,7 @@ public class UserInterfaceMain extends JFrame {
     public ToolFrame fahrzeuge;
     private Cybertruck cybertruck;
     private JFrame JFrame;
+    JButton Taxameter = new JButton("Taxameter öffnen");
     
     
     UserInterfaceMain(Controller controller) {
@@ -61,6 +63,8 @@ public class UserInterfaceMain extends JFrame {
         karte_item.addActionListener(controller);
         fahrzeuge_item = new JMenuItem("Fahrzeuge");
         fahrzeuge_item.addActionListener(controller);
+        taxameter_item = new JMenuItem("Taxameter");
+        taxameter_item.addActionListener(controller);
         
         
         setJMenuBar(menubar);
@@ -76,6 +80,7 @@ public class UserInterfaceMain extends JFrame {
         contact_menu.add(email_item);
         home_menu.add(karte_item);
         home_menu.add(fahrzeuge_item);
+        home_menu.add(taxameter_item);
         
         
         

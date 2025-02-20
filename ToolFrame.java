@@ -112,6 +112,18 @@ import java.awt.Menu;
       verschiebeUnten.addActionListener(controller);
       getContentPane().add(verschiebeUnten);
       
+            JButton neuesTaxameter = new JButton("Taxameter Öffnen");
+      neuesTaxameter.setHorizontalAlignment(SwingConstants.CENTER);
+      neuesTaxameter.setBounds(300, 45, 160, 30);
+      neuesTaxameter.addActionListener(controller);
+      getContentPane().add(neuesTaxameter);
+      
+            JButton neuesMOIA = new JButton("MOIA Rufen");
+      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
+      neuesMOIA.setBounds(300,100, 160, 30);
+      neuesMOIA.addActionListener(controller);
+      getContentPane().add(neuesMOIA);
+      
       //Button zum Anzeigen der Details
      
      JButton details = new JButton("Details");

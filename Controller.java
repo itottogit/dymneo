@@ -62,11 +62,23 @@
           menu.karte.updateList(ev.getElementList());
           System.out.println("Action Test");
       } 
-     
-     
+                 if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Taxameter Öffnen")))
+      {
+          // Der Knopf "Objekt hinzufügen" wurde gedrückt. Es wird ein neues Element
+          // im Modell erstellt.
+          TaxameterApp app = new TaxameterApp();
+          app.init();
+          System.out.println("Taxameter geöffnet");  
+      }
       
-    
-    
+ 
+        if ((klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+
+    (((JButton) eventQuelle).getText().equals("MOIA Rufen"))) {
+    // Der Knopf "MOIA Rufen" wurde gedrückt. Ein Pop-up wird angezeigt.
+    JOptionPane.showMessageDialog(null, "MOIA wurde zu ihrem Standort gerufen");
+      }
     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("Details")))
       {
