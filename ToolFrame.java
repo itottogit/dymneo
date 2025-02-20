@@ -83,6 +83,12 @@
       neuesTaxameter.addActionListener(controller);
       getContentPane().add(neuesTaxameter);
       
+            JButton neuesMOIA = new JButton("MOIA Rufen");
+      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
+      neuesMOIA.setBounds(300,100, 160, 30);
+      neuesMOIA.addActionListener(controller);
+      getContentPane().add(neuesMOIA);
+      
      // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeRechts = new JButton("rechts");
