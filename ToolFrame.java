@@ -1,3 +1,5 @@
+import java.awt.Menu;
+
 /**
  * Ein Fenster mit einer Liste und diversen Buttons
  *
@@ -16,10 +18,11 @@
     public JList list;
     
     
+    
     public ToolFrame (Controller controller) {
       super ("Werkzeuge"); //Aufruf des Konstruktors von JFrame
         
-      setSize(600, 400);
+      setSize(400, 350);
       getContentPane().setLayout(null); //Das Layout wird per Hand codiert.
 
     // Hier wird das Menü erzeugt:
@@ -77,17 +80,6 @@
       neuesElementKnopf.addActionListener(controller);
       getContentPane().add(neuesElementKnopf);
       
-      JButton neuesTaxameter = new JButton("Taxameter Öffnen");
-      neuesTaxameter.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesTaxameter.setBounds(300, 45, 160, 30);
-      neuesTaxameter.addActionListener(controller);
-      getContentPane().add(neuesTaxameter);
-      
-            JButton neuesMOIA = new JButton("MOIA Rufen");
-      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesMOIA.setBounds(300,100, 160, 30);
-      neuesMOIA.addActionListener(controller);
-      getContentPane().add(neuesMOIA);
       
      // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
@@ -132,7 +124,7 @@
      
      
      //JLIst für die verschiedenen Fahrzeuge
-      String [] eintraege = {"Auto",  "Fahrrad", "eckigesauto", "Route","Fähre", "Fahrad", "Pickup"};
+      String [] eintraege = {"Auto",  "Fahrrad", "Pickup", "Fähre"};
       list = new JList(eintraege);
       
       JScrollPane scroller = new JScrollPane(list);
