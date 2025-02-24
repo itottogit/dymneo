@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=CanvasFrame
+comment0.text=\r\n\ Dieses\ Fenster\ enth\u00E4lt\ die\ Leinwand,\ auf\ der\ Elemente\ gezeichnet\ werden\ k\u00F6nnen.\r\n\ \r\n\ @author\ iTOtto\ \r\n\ @version\ 12/24\r\n
+comment1.params=titel\ hoehe\ breite\ farbe\ controller
+comment1.target=CanvasFrame(java.lang.String,\ int,\ int,\ java.awt.Color,\ Controller)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanvasFrame\r\n
+comment2.params=element
+comment2.target=void\ neuesElement(Element)
+comment3.params=elementListe
+comment3.target=void\ updateList(java.util.ArrayList)
+comment4.params=
+comment4.target=void\ neuZeichnen()
+comment5.params=startX\ startY\ zielX\ zielY
+comment5.target=void\ zeichneLinie(int,\ int,\ int,\ int)
+numComments=6

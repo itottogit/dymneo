@@ -1,10 +1,11 @@
+import java.util.ArrayList;
+
   import java.awt.*;
   import java.awt.event.*;
   import javax.swing.*;
   import javax.swing.event.*;
   import java.awt.geom.Point2D; 
-  import java.awt.Point;
-  
+  import java.awt.Point; 
   
   public class Controller extends MouseInputAdapter implements ActionListener, ListSelectionListener
   {
@@ -13,10 +14,12 @@
     //Hier werden daher die anderen wichtigen Objekte erzeugt.
       
     private   ToolFrame   toolFrame;
-    
+    protected CanvasFrame canvasFrame;
     private   SoundOutput soundOutput;
-    private UserInterfaceMain menu;
+    
     private   Elementverwaltung ev;
+    private Ort ort;
+    private ArrayList<Ort> orte;
     
     private   String      auswahl;
     
@@ -26,18 +29,82 @@
         
         //Beim Erzeugen des ToolFrame erhält dieser mittels des Parameters
         //"this" eine Referenz auf dieses Objekt, den Controller.
+        toolFrame = new ToolFrame(this);
+        toolFrame.setVisible(true);
         
-        menu = new UserInterfaceMain(this);
-        
+        canvasFrame  = new CanvasFrame("Mobilitätskarte",800,600,Color.white,this);
         
         //Sound ist deaktiviert.
         soundOutput = new SoundOutput();
         
         ev = new Elementverwaltung(this); 
-        Hamburg hh = new Hamburg(ev); 
-        menu.karte.updateList(ev.getElementList());
+        Hamburg hh = new Hamburg(ev); canvasFrame.updateList(ev.getElementList());
+        orte = new ArrayList();
+
+        canvasFrame.updateList(ev.getElementList());
+        
+        Ort hbfhh = new Ort ("Hamburg Hauptbahnhof", 361, 355);
+        showElement (hbfhh);
+        orte.add(hbfhh);
+        
+        Ort reeperbahn = new Ort ("Reeperbahn", 250, 470);
+        showElement (reeperbahn);
+        orte.add (reeperbahn);
+        
+        Ort hafen= new Ort ("Hafen", 280, 500);
+        showElement (hafen);
+        orte.add (hafen);
+        
+        Ort billstedt = new Ort ("Billstedt",501, 367);
+        showElement (billstedt);
+        orte.add (billstedt);
+        
+        Ort HAM = new Ort ("Flughafen Hamburg", 379, 242);
+        showElement (HAM);
+        orte.add(HAM);
+        
+        Ort BlankeneseSee = new Ort ("Blankenese See", 255, 344);
+        showElement (BlankeneseSee);
+        orte.add (BlankeneseSee);
+        
+        Ort VPS = new Ort ("Volksparkstadion", 305, 270);
+        showElement (VPS);
+        orte.add (VPS);
+        
+        
     }
     
+    public void Route (String start, String ziel) {
+        boolean start1 = false;
+        Ort startOrt = null;
+        Ort zielOrt = null;    
+    
+        boolean ziel2 = false;
+        for(Ort ort: orte){
+            if(ort.getName().equals(start)){
+                start1 = true;
+                startOrt = ort;
+            }
+            if(ort.getName().equals(ziel)){
+                ziel2 = true;
+                zielOrt = ort;
+            }
+        }
+        if(start1 == true && ziel2 == true){
+           drawLine(startOrt, zielOrt); 
+        
+        }
+    }
+    
+    private void drawLine(Ort start, Ort ziel){
+        canvasFrame.zeichneLinie(start.getX(), start.getY(), ziel.getX(), ziel.getY());
+        
+    }
+    
+    public void showElement (Element e) {
+        ev.verwaltungsListeElementeEintragen(e);
+        canvasFrame.updateList (ev.getElementList());
+    }
     public void actionPerformed(ActionEvent evt)
     {
       System.out.println("Action passiert");
@@ -59,26 +126,14 @@
           // Der Testknopf wurde gedrückt. 
           
           ev.testMethode();
-          menu.karte.updateList(ev.getElementList());
+          canvasFrame.updateList(ev.getElementList());
           System.out.println("Action Test");
       } 
-                 if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-           (((JButton) eventQuelle).getText().equals("Taxameter Öffnen")))
-      {
-          // Der Knopf "Objekt hinzufügen" wurde gedrückt. Es wird ein neues Element
-          // im Modell erstellt.
-          TaxameterApp app = new TaxameterApp();
-          app.init();
-          System.out.println("Taxameter geöffnet");  
-      }
+     
+     
       
- 
-        if ((klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-
-    (((JButton) eventQuelle).getText().equals("MOIA Rufen"))) {
-    // Der Knopf "MOIA Rufen" wurde gedrückt. Ein Pop-up wird angezeigt.
-    JOptionPane.showMessageDialog(null, "MOIA wurde zu ihrem Standort gerufen");
-      }
+    
+    
     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
            (((JButton) eventQuelle).getText().equals("Details")))
       {
@@ -96,7 +151,7 @@
           // Der Knopf Verschiebe rechts wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachRechts();
-          menu.karte.updateList(ev.getElementList());
+          canvasFrame.updateList(ev.getElementList());
           System.out.println("Action Rechts");
       } 
     
@@ -106,7 +161,7 @@
           // Der Knopf Verschiebe links wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachLinks();
-          menu.karte.updateList(ev.getElementList());
+          canvasFrame.updateList(ev.getElementList());
           System.out.println("Action Links");
       }     
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
@@ -115,7 +170,7 @@
           // Der Knopf Verschiebe oben wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachOben();
-          menu.karte.updateList(ev.getElementList());
+          canvasFrame.updateList(ev.getElementList());
           System.out.println("Action Oben");
       }       
       if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
@@ -124,26 +179,8 @@
           // Der Knopf Verschiebe unten wurde gedrückt. 
           
           ev.verschiebeMarkierteElementeNachUnten();
-          menu.karte.updateList(ev.getElementList());
+          canvasFrame.updateList(ev.getElementList());
           System.out.println("Action Unten");
-      }
-      if ( (klassennameDerEreignisQuelle.equals("javax.swing.JMenuItem")) &&
-           (((JMenuItem) eventQuelle).getText().equals("Karte")))
-      {
-          // Der Knopf Verschiebe unten wurde gedrückt. 
-          
-          menu.oeffneKarte(this);
-          menu.karte.updateList(ev.getElementList());
-          System.out.println("Karte wurde gedrückt");
-      }
-      if ( (klassennameDerEreignisQuelle.equals("javax.swing.JMenuItem")) &&
-           (((JMenuItem) eventQuelle).getText().equals("Fahrzeuge")))
-      {
-          // Der Knopf Verschiebe unten wurde gedrückt. 
-          
-          menu.oeffneFahrzeuge(this);
-          menu.karte.updateList(ev.getElementList());
-          System.out.println("Fahrzeuge wurde gedrückt");
       }
      
       
@@ -210,7 +247,7 @@
       
       }
          
-      menu.karte.neuZeichnen();
+      canvasFrame.neuZeichnen();
       System.out.println("Maus geklickt bei Stelle: " + p.toString());
         
     }
@@ -256,7 +293,7 @@
     
     public void updateView()
     {
-        menu.karte.updateList(ev.getElementList());
+        canvasFrame.updateList(ev.getElementList());
     }
     
     public void speichern()
@@ -269,5 +306,5 @@
         ev.laden();
     }
     
-    
+
 }  
