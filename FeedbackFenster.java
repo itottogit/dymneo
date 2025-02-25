@@ -9,7 +9,7 @@ public class FeedbackFenster extends JFrame {
             ErstelleGUI();
     }
     
-    private static void ErstelleGUI() {
+    protected static void ErstelleGUI() {
         JFrame frame = new JFrame("Feedback");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(600, 400));
