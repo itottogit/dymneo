@@ -95,6 +95,7 @@
         System.out.println("Bewerte");
         rl.speichereRezension("Bewertung", 3);
         System.out.println(rl.anzahlRezensionen());
+        FeedbackFenster.ErstelleGUI();
         
         }    
       
