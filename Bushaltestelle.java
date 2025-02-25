@@ -18,8 +18,8 @@ public class Bushaltestelle extends Haltestelle {
         farbe = Color.black;
         orientierung = 0;
         istSichtbar  = true;
-        breite = 15;
-        hoehe = 15;
+        breite = 5;
+        hoehe = 5;
         figur = gibAktuelleFigur(); 
     }
     public Bushaltestelle(String n, int x, int y){
@@ -29,8 +29,8 @@ public class Bushaltestelle extends Haltestelle {
         farbe = Color.black;
         orientierung = 0;
         istSichtbar  = true;
-        breite = 15;
-        hoehe = 15;
+        breite = 10;
+        hoehe = 10;
         figur = gibAktuelleFigur();  
     }
     protected Shape gibAktuelleFigur() {

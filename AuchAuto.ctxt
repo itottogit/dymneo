@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=AuchAuto
+comment0.text=\r\n\ Ein\ Auto,\ das\ manipuliert\ werden\ kann\ und\ sich\ selbst\ auf\ einer\ Leinwand\ zeichnet.\r\n\ \r\n\ @author\ \ Torsten\ Otto\r\n\ @version\ 10/2022\r\n
+comment1.params=
+comment1.target=AuchAuto()
+comment1.text=\r\n\ Erzeuge\ ein\ neues\ Cybertruck\ mit\ einer\ Standardfarbe\ und\ Standardgroesse\r\n\ an\ einer\ Standardposition.\ (Standardkonstruktor)\r\n
+comment2.params=
+comment2.target=java.awt.Shape\ gibAktuelleFigur()
+comment2.text=\r\n\ Berechnet\ das\ zu\ zeichnende\ Shape\ anhand\ der\ gegebenen\ Daten\r\n\ [\ Zum\ Anzeigen\ der\ Attributwerte\ ueber\ Inspect\ muss\ hier\ die\ Sichtbarkeit\ \r\n\ \ auf\ public\ gesetzt\ werden.\ ]\r\n
+numComments=3

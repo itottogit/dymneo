@@ -29,8 +29,8 @@ public class UBahnhaltestelle extends Haltestelle {
         farbe = Color.black;
         orientierung = 0;
         istSichtbar  = true;
-        breite = 15;
-        hoehe = 15;
+        breite =8;
+        hoehe = 8;
         figur = gibAktuelleFigur(); 
     }
     protected Shape gibAktuelleFigur() {

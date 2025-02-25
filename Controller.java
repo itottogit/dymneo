@@ -16,7 +16,7 @@ import java.awt.Point;
     private   SoundOutput soundOutput;
     private   Elementverwaltung ev;
     private   String      auswahl;
-    protected Rezensionliste rl ;
+    
     public Controller() 
     {
         
@@ -30,15 +30,12 @@ import java.awt.Point;
         //Sound ist deaktiviert.
         soundOutput = new SoundOutput();
         
-        rl = new Rezensionliste () ;
-        
         ev = new Elementverwaltung(this); 
-        
         Hamburg hh = new Hamburg(ev); 
         canvasFrame.updateList(ev.getElementList());
         
         // erstellen von Bus/Bahn Haltestellen:
-        Haltestelle bergedorfZOB = new Bushaltestelle("Bergedorf ZOB", 300, 350);
+        Haltestelle bergedorfZOB = new Bushaltestelle("Bergedorf ZOB", 571, 435);
         showElement(bergedorfZOB);
         
         Haltestelle mümmelmannsberg = new Bushaltestelle("Mümmelmannsberg", 330, 330);
@@ -50,7 +47,7 @@ import java.awt.Point;
         Haltestelle rathausmarkt = new Bushaltestelle("Rathausmarkt", 400, 300);
         showElement(rathausmarkt);
         
-        Haltestelle gänsemarkt = new Bushaltestelle("Gänsemarkt", 440, 320);
+        Haltestelle gänsemarkt = new Bushaltestelle("Eppendorf", 372, 295);
         showElement(gänsemarkt);
         
         
@@ -60,8 +57,8 @@ import java.awt.Point;
         Haltestelle hagenbeckstierpark = new UBahnhaltestelle("Hagenbecks Tierpark", 470, 260);
         showElement(hagenbeckstierpark);
         
-        Haltestelle schlump = new UBahnhaltestelle("Schlump", 430, 280);
-        showElement(schlump);
+        Haltestelle billstedt = new UBahnhaltestelle("Billstedt", 463, 357);
+        showElement(billstedt);
         
         Haltestelle hauptbahnhofnord = new UBahnhaltestelle("Hauptbahnhof Nord", 475, 310);
         showElement(hauptbahnhofnord);
@@ -75,6 +72,10 @@ import java.awt.Point;
          
         Haltestelle hornerrennbahn = new UBahnhaltestelle("Horner Rennbahn", 500, 340);
         showElement(hornerrennbahn);
+        
+        Haltestelle bfharburg = new UBahnhaltestelle("Bf Harburg", 375, 473);
+        showElement(bfharburg);
+        
         
     }
     public void showElement(Element e) {
@@ -107,16 +108,7 @@ import java.awt.Point;
           System.out.println("Action Test");
       } 
      
-     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-           (((JButton) eventQuelle).getText().equals("Bewerte")))
-      {
-        //Der Button zum anzeigen der Details wurde gedrueckt
-         
-        System.out.println("Bewerte");
-        rl.speichereRezension("Bewertung", 3);
-        System.out.println(rl.anzahlRezensionen());
-        
-        }    
+     
       
     
     
@@ -256,7 +248,11 @@ import java.awt.Point;
     public void mousePressed(MouseEvent evt)
     {
       System.out.println("Maus gedrückt!");
-
+//       int x = evt.getX();
+//       int y = evt.getY();
+//       Rectangle currentRect = new Rectangle(x,y,0,0);
+//       updateDrawableRect(getWidth(), getHeight());
+//       repaint();
     }   
      
     
@@ -287,6 +283,6 @@ import java.awt.Point;
     {
         ev.laden();
     }
-   
+    
 
 }  

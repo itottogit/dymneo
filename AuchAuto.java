@@ -23,8 +23,8 @@ public class AuchAuto extends Fahrzeug
         farbe = Color.black;
         orientierung = 0;
         istSichtbar = true;
-        breite = 40;
-        hoehe  = 40;
+        breite = 10;
+        hoehe  = 10;
         faktorHoehe  = 1;
         faktorBreite = 1;
         
