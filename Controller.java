@@ -25,13 +25,13 @@
     
     private   String      auswahl;
     
-    
+    private Rezensionliste rl ;
     public Controller() 
     {
         
         //Beim Erzeugen des ToolFrame erhält dieser mittels des Parameters
         //"this" eine Referenz auf dieses Objekt, den Controller.
-        
+        rl = new Rezensionliste();
         menu = new UserInterfaceMain(this);
         
         
@@ -78,6 +78,14 @@
           System.out.println("Taxameter geöffnet");  
       }
 
+      if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Testknopf")))
+      {
+          // Der Testknopf wurde gedrückt. 
+          
+          rl.speichereRezension("Bewertung",5);
+          System.out.println("Bewerte");
+      } 
 
 
 
