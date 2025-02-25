@@ -78,15 +78,7 @@
           System.out.println("Taxameter geöffnet");  
       }
 
-      if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
-           (((JButton) eventQuelle).getText().equals("Testknopf")))
-      {
-          // Der Testknopf wurde gedrückt. 
-          
-          rl.speichereRezension("Bewertung",5);
-          System.out.println("Bewerte");
-      } 
-
+ 
 
 
         if ((klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
@@ -95,7 +87,16 @@
     // Der Knopf "MOIA Rufen" wurde gedrückt. Ein Pop-up wird angezeigt.
     JOptionPane.showMessageDialog(null, "MOIA wurde zu ihrem Standort gerufen");
       }     
-     
+      if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Bewerte")))
+      {
+        //Der Button zum anzeigen der Details wurde gedrueckt
+         
+        System.out.println("Bewerte");
+        rl.speichereRezension("Bewertung", 3);
+        System.out.println(rl.anzahlRezensionen());
+        
+        }    
       
     
     
