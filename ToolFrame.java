@@ -1,5 +1,3 @@
-import java.awt.Menu;
-
 /**
  * Ein Fenster mit einer Liste und diversen Buttons
  *
@@ -18,11 +16,10 @@ import java.awt.Menu;
     public JList list;
     
     
-    
     public ToolFrame (Controller controller) {
       super ("Werkzeuge"); //Aufruf des Konstruktors von JFrame
         
-      setSize(400, 350);
+      setSize(410, 300);
       getContentPane().setLayout(null); //Das Layout wird per Hand codiert.
 
     // Hier wird das Menü erzeugt:
@@ -79,8 +76,12 @@ import java.awt.Menu;
       neuesElementKnopf.setBounds(120, 45, 160, 30);
       neuesElementKnopf.addActionListener(controller);
       getContentPane().add(neuesElementKnopf);
-      
-      
+        
+      JButton bewerte = new JButton("Bewerte");
+      bewerte.setHorizontalAlignment(SwingConstants.CENTER);
+      bewerte.setBounds(300, 160,100, 30);
+      bewerte.addActionListener(controller);
+      getContentPane().add(bewerte);       
      // Hier wird der Knopf für das Rechtsverschieben eines markierten Elements
       // erstellt. 
       JButton verschiebeRechts = new JButton("rechts");
@@ -112,18 +113,6 @@ import java.awt.Menu;
       verschiebeUnten.addActionListener(controller);
       getContentPane().add(verschiebeUnten);
       
-            JButton neuesTaxameter = new JButton("Taxameter Öffnen");
-      neuesTaxameter.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesTaxameter.setBounds(300, 45, 160, 30);
-      neuesTaxameter.addActionListener(controller);
-      getContentPane().add(neuesTaxameter);
-      
-            JButton neuesMOIA = new JButton("MOIA Rufen");
-      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
-      neuesMOIA.setBounds(300,100, 160, 30);
-      neuesMOIA.addActionListener(controller);
-      getContentPane().add(neuesMOIA);
-      
       //Button zum Anzeigen der Details
      
      JButton details = new JButton("Details");
@@ -136,7 +125,7 @@ import java.awt.Menu;
      
      
      //JLIst für die verschiedenen Fahrzeuge
-      String [] eintraege = {"Auto",  "Fahrrad", "Pickup", "Fähre"};
+      String [] eintraege = {"Auto",  "Fahrrad", "eckigesauto", "Route","Fähre", "Fahrad", "Pickup"};
       list = new JList(eintraege);
       
       JScrollPane scroller = new JScrollPane(list);

@@ -13,7 +13,7 @@ public class Rezensionliste
 {
     // Deklaration
     // Speicher fuer eine beliebige Anzahl an Rezensionen.
-    private ArrayList<Rezension> rezensionen;
+    protected ArrayList<Rezension> rezensionen;
 
     //Hier wird jetzt Rezension statt String genutzt.
     //Dafür sind auch an anderen Stellen Änderungen notwendig.

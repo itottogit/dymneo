@@ -46,16 +46,8 @@ public class CanvasFrame extends JFrame
      {
         cp.repaint();
      }
-     
     
-     
-     public void zeichneLinie(int startX, int startY, int zielX, int zielY){
-         LineElement line = new LineElement(startX, startY, zielX, zielY);
-         
-         cp.addShape(line);
-         
-     }
-    
+   
   /**
    * Hier wird tatsächlich gezeichnet. Das CanvasPanel ist eine interne Klasse.
    * 
@@ -66,7 +58,6 @@ public class CanvasFrame extends JFrame
   {
     // instance variables - replace the example below with your own
     private ArrayList shapes;
-    private ArrayList<Line2D> lines;
 
     /**
      * Constructor for objects of class CanvasPanel
@@ -78,7 +69,6 @@ public class CanvasFrame extends JFrame
         addMouseListener(controller);
         
         shapes = new ArrayList();
-        
                
     }
 
@@ -106,9 +96,7 @@ public class CanvasFrame extends JFrame
      public void addShape(Element neuesElement) {
          shapes.add(neuesElement);
          repaint();
-     }
-     
-  
+     }    
      
      public void updateList(ArrayList elementeListe)
      {

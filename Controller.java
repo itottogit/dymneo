@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-
-  import java.awt.*;
-  import java.awt.event.*;
-  import javax.swing.*;
-  import javax.swing.event.*;
-  import java.awt.geom.Point2D; 
-  import java.awt.Point; 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.geom.Point2D;
+import java.awt.Point; 
   
   public class Controller extends MouseInputAdapter implements ActionListener, ListSelectionListener
   {
@@ -16,14 +14,9 @@ import java.util.ArrayList;
     private   ToolFrame   toolFrame;
     protected CanvasFrame canvasFrame;
     private   SoundOutput soundOutput;
-    
     private   Elementverwaltung ev;
-    private Ort ort;
-    private ArrayList<Ort> orte;
-    
     private   String      auswahl;
-    
-    
+    protected Rezensionliste rl ;
     public Controller() 
     {
         
@@ -37,74 +30,58 @@ import java.util.ArrayList;
         //Sound ist deaktiviert.
         soundOutput = new SoundOutput();
         
+        rl = new Rezensionliste () ;
+        
         ev = new Elementverwaltung(this); 
-        Hamburg hh = new Hamburg(ev); canvasFrame.updateList(ev.getElementList());
-        orte = new ArrayList();
-
+        
+        Hamburg hh = new Hamburg(ev); 
         canvasFrame.updateList(ev.getElementList());
         
-        Ort hbfhh = new Ort ("Hamburg Hauptbahnhof", 361, 355);
-        showElement (hbfhh);
-        orte.add(hbfhh);
+        // erstellen von Bus/Bahn Haltestellen:
+        Haltestelle bergedorfZOB = new Bushaltestelle("Bergedorf ZOB", 300, 350);
+        showElement(bergedorfZOB);
         
-        Ort reeperbahn = new Ort ("Reeperbahn", 250, 470);
-        showElement (reeperbahn);
-        orte.add (reeperbahn);
+        Haltestelle mümmelmannsberg = new Bushaltestelle("Mümmelmannsberg", 330, 330);
+        showElement(mümmelmannsberg);
         
-        Ort hafen= new Ort ("Hafen", 280, 500);
-        showElement (hafen);
-        orte.add (hafen);
+        Haltestelle jungfernstieg = new Bushaltestelle("Jungfernstieg", 410, 290);
+        showElement(jungfernstieg);
         
-        Ort billstedt = new Ort ("Billstedt",501, 367);
-        showElement (billstedt);
-        orte.add (billstedt);
+        Haltestelle rathausmarkt = new Bushaltestelle("Rathausmarkt", 400, 300);
+        showElement(rathausmarkt);
         
-        Ort HAM = new Ort ("Flughafen Hamburg", 379, 242);
-        showElement (HAM);
-        orte.add(HAM);
-        
-        Ort BlankeneseSee = new Ort ("Blankenese See", 255, 344);
-        showElement (BlankeneseSee);
-        orte.add (BlankeneseSee);
-        
-        Ort VPS = new Ort ("Volksparkstadion", 305, 270);
-        showElement (VPS);
-        orte.add (VPS);
+        Haltestelle gänsemarkt = new Bushaltestelle("Gänsemarkt", 440, 320);
+        showElement(gänsemarkt);
         
         
-    }
-    
-    public void Route (String start, String ziel) {
-        boolean start1 = false;
-        Ort startOrt = null;
-        Ort zielOrt = null;    
-    
-        boolean ziel2 = false;
-        for(Ort ort: orte){
-            if(ort.getName().equals(start)){
-                start1 = true;
-                startOrt = ort;
-            }
-            if(ort.getName().equals(ziel)){
-                ziel2 = true;
-                zielOrt = ort;
-            }
-        }
-        if(start1 == true && ziel2 == true){
-           drawLine(startOrt, zielOrt); 
+        Haltestelle niendorfnord = new UBahnhaltestelle("Niendorf Nord", 460, 250);
+        showElement(niendorfnord);
         
-        }
-    }
-    
-    private void drawLine(Ort start, Ort ziel){
-        canvasFrame.zeichneLinie(start.getX(), start.getY(), ziel.getX(), ziel.getY());
+        Haltestelle hagenbeckstierpark = new UBahnhaltestelle("Hagenbecks Tierpark", 470, 260);
+        showElement(hagenbeckstierpark);
+        
+        Haltestelle schlump = new UBahnhaltestelle("Schlump", 430, 280);
+        showElement(schlump);
+        
+        Haltestelle hauptbahnhofnord = new UBahnhaltestelle("Hauptbahnhof Nord", 475, 310);
+        showElement(hauptbahnhofnord);
+        
+        Haltestelle berlinertor = new UBahnhaltestelle("Berliner Tor", 500, 320);
+        showElement(berlinertor);
+        
+        Haltestelle burgstraße = new UBahnhaltestelle("Burgstraße", 460, 330);
+        showElement(burgstraße);
+        
+         
+        Haltestelle hornerrennbahn = new UBahnhaltestelle("Horner Rennbahn", 500, 340);
+        showElement(hornerrennbahn);
         
     }
-    
-    public void showElement (Element e) {
+    public void showElement(Element e) {
         ev.verwaltungsListeElementeEintragen(e);
-        canvasFrame.updateList (ev.getElementList());
+        canvasFrame.updateList(ev.getElementList());
     }
+    
     public void actionPerformed(ActionEvent evt)
     {
       System.out.println("Action passiert");
@@ -130,7 +107,16 @@ import java.util.ArrayList;
           System.out.println("Action Test");
       } 
      
-     
+     if ( (klassennameDerEreignisQuelle.equals("javax.swing.JButton")) &&
+           (((JButton) eventQuelle).getText().equals("Bewerte")))
+      {
+        //Der Button zum anzeigen der Details wurde gedrueckt
+         
+        System.out.println("Bewerte");
+        rl.speichereRezension("Bewertung", 3);
+        System.out.println(rl.anzahlRezensionen());
+        
+        }    
       
     
     
@@ -265,16 +251,12 @@ import java.util.ArrayList;
     public void mouseExited(MouseEvent evt)
     {
       System.out.println("Maus verlässt die Fläche");
-    }   
+    }    
     
     public void mousePressed(MouseEvent evt)
     {
       System.out.println("Maus gedrückt!");
-//       int x = evt.getX();
-//       int y = evt.getY();
-//       Rectangle currentRect = new Rectangle(x,y,0,0);
-//       updateDrawableRect(getWidth(), getHeight());
-//       repaint();
+
     }   
      
     
@@ -305,6 +287,6 @@ import java.util.ArrayList;
     {
         ev.laden();
     }
-    
+   
 
 }  
