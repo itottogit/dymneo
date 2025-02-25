@@ -59,6 +59,20 @@
     extra.add(ueber);
     menueLeiste.add(extra);
     setMenuBar(menueLeiste);
+    
+               JButton neuesTaxameter = new JButton("Taxameter Öffnen");
+      neuesTaxameter.setHorizontalAlignment(SwingConstants.CENTER);
+      neuesTaxameter.setBounds(300, 45, 160, 30);
+      neuesTaxameter.addActionListener(controller);
+      getContentPane().add(neuesTaxameter);
+
+            JButton neuesMOIA = new JButton("MOIA Rufen");
+      neuesMOIA.setHorizontalAlignment(SwingConstants.CENTER);
+      neuesMOIA.setBounds(300,100, 160, 30);
+      neuesMOIA.addActionListener(controller);
+      getContentPane().add(neuesMOIA);
+
+
 
       // Hier wird der Knopf für Testzwecke erstellt.
       JButton testKnopf = new JButton("Testknopf");
